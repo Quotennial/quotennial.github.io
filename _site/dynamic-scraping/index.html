@@ -295,12 +295,13 @@
 <h1 id="finding-the-data-in-the-html">Finding the data in the HTML</h1>
 
 <h2 id="first-look">First look</h2>
+<p><img src="../assets/images/map_scrape/image-20190129213726123.png" alt="image-20190129213726123" /></p>
 
 <p>So first I select a dot then find the name of the development in the HTML, all good. Then I click another circle/ marker and search the previous house, this is to try and get a better sense of where all the data is. No luck, it seems that the information is loaded on request.</p>
 
 <h2 id="second-look">Second look</h2>
 
-<p>Using <a href="https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/">this</a> very helpful website I utilise the network tab in the inspect module. <img src="/Users/yusufsohoye/Desktop/image-20190129214436938.png" alt="image-20190129214436938" /></p>
+<p>Using <a href="https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/">this</a> very helpful website I utilise the network tab in the inspect module. <img src="../assets/images/map_scrape/image-20190129214436938.png" alt="image-20190129214436938" /></p>
 
 <p>As the top right of the inspect pane shows, the page loads a file when the marker is clicked. I inspect this file to see a JSON looking file, open the link in a new tab and see it is intact a JSON of some sort. I repeat this a couple of times and find consistent results. Now to look at the web address.</p>
 
@@ -321,7 +322,7 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
 
 <h1 id="cleaning-the-json-data">Cleaning the JSON data</h1>
 
-<p>Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.<img src="/Users/yusufsohoye/Desktop/image-20190129233250146.png" alt="image-20190129233250146" /></p>
+<p>Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.<img src="../assets/images/map_scrape/image-20190129233250146.png" alt="image-20190129233250146" /></p>
 
 <h1 id="finding-longitude-and-latitude">Finding Longitude and Latitude</h1>
 

@@ -16,13 +16,13 @@ The brief is to use the map on [this](https://www.bpf.org.uk/what-we-do/bpf-buil
 # Finding the data in the HTML
 
 ## First look
-
+![image-20190129213726123](../assets/images/map_scrape/image-20190129213726123.png)
 
 So first I select a dot then find the name of the development in the HTML, all good. Then I click another circle/ marker and search the previous house, this is to try and get a better sense of where all the data is. No luck, it seems that the information is loaded on request.
 
 ## Second look
 
-Using [this](https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/) very helpful website I utilise the network tab in the inspect module. ![image-20190129214436938](/Users/yusufsohoye/Desktop/image-20190129214436938.png)
+Using [this](https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/) very helpful website I utilise the network tab in the inspect module. ![image-20190129214436938](../assets/images/map_scrape/image-20190129214436938.png)
 
 As the top right of the inspect pane shows, the page loads a file when the marker is clicked. I inspect this file to see a JSON looking file, open the link in a new tab and see it is intact a JSON of some sort. I repeat this a couple of times and find consistent results. Now to look at the web address.
 
@@ -44,7 +44,7 @@ Uses selenium to scrape all the webpage. Loops through webpages using formatted 
 
 # Cleaning the JSON data
 
-Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.![image-20190129233250146](/Users/yusufsohoye/Desktop/image-20190129233250146.png)
+Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.![image-20190129233250146](../assets/images/map_scrape/image-20190129233250146.png)
 
 
 

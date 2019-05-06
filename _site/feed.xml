@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-06T15:51:49+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Pineapple Coder</title><subtitle>An amazing website.</subtitle><author><name>Yusuf Sohoye</name></author><entry><title type="html">Dynamic Web Scraping</title><link href="http://localhost:4000/dynamic-scraping/" rel="alternate" type="text/html" title="Dynamic Web Scraping" /><published>2019-05-05T00:00:00+01:00</published><updated>2019-05-05T00:00:00+01:00</updated><id>http://localhost:4000/dynamic-scraping</id><content type="html" xml:base="http://localhost:4000/dynamic-scraping/">&lt;h1 id=&quot;interactive-map-scraping&quot;&gt;Interactive Map Scraping&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-06T22:30:20+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Pineapple Coder</title><subtitle>Personal website.</subtitle><author><name>Yusuf Sohoye</name></author><entry><title type="html">Dynamic Web Scraping</title><link href="http://localhost:4000/dynamic-scraping/" rel="alternate" type="text/html" title="Dynamic Web Scraping" /><published>2019-05-05T00:00:00+01:00</published><updated>2019-05-05T00:00:00+01:00</updated><id>http://localhost:4000/dynamic-scraping</id><content type="html" xml:base="http://localhost:4000/dynamic-scraping/">&lt;h1 id=&quot;interactive-map-scraping&quot;&gt;Interactive Map Scraping&lt;/h1&gt;
 
 &lt;p&gt;The brief is to use the map on &lt;a href=&quot;https://www.bpf.org.uk/what-we-do/bpf-build-rent-map-uk&quot;&gt;this&lt;/a&gt; website to get the information about BPF build to rent statistics in the UK. Initial thoughts are to scrape the full HTML and then parse through the relevant data to find the relevant information. Using python and i will assume selenium will be involved.&lt;/p&gt;
 
 &lt;h1 id=&quot;finding-the-data-in-the-html&quot;&gt;Finding the data in the HTML&lt;/h1&gt;
 
 &lt;h2 id=&quot;first-look&quot;&gt;First look&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/images/map_scrape/image-20190129213726123.png&quot; alt=&quot;image-20190129213726123&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So first I select a dot then find the name of the development in the HTML, all good. Then I click another circle/ marker and search the previous house, this is to try and get a better sense of where all the data is. No luck, it seems that the information is loaded on request.&lt;/p&gt;
 
 &lt;h2 id=&quot;second-look&quot;&gt;Second look&lt;/h2&gt;
 
-&lt;p&gt;Using &lt;a href=&quot;https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/&quot;&gt;this&lt;/a&gt; very helpful website I utilise the network tab in the inspect module. &lt;img src=&quot;/Users/yusufsohoye/Desktop/image-20190129214436938.png&quot; alt=&quot;image-20190129214436938&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Using &lt;a href=&quot;https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/&quot;&gt;this&lt;/a&gt; very helpful website I utilise the network tab in the inspect module. &lt;img src=&quot;../assets/images/map_scrape/image-20190129214436938.png&quot; alt=&quot;image-20190129214436938&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As the top right of the inspect pane shows, the page loads a file when the marker is clicked. I inspect this file to see a JSON looking file, open the link in a new tab and see it is intact a JSON of some sort. I repeat this a couple of times and find consistent results. Now to look at the web address.&lt;/p&gt;
 
@@ -31,7 +32,7 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
 
 &lt;h1 id=&quot;cleaning-the-json-data&quot;&gt;Cleaning the JSON data&lt;/h1&gt;
 
-&lt;p&gt;Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.&lt;img src=&quot;/Users/yusufsohoye/Desktop/image-20190129233250146.png&quot; alt=&quot;image-20190129233250146&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.&lt;img src=&quot;../assets/images/map_scrape/image-20190129233250146.png&quot; alt=&quot;image-20190129233250146&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;finding-longitude-and-latitude&quot;&gt;Finding Longitude and Latitude&lt;/h1&gt;
 
