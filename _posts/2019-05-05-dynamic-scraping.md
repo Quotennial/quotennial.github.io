@@ -70,3 +70,5 @@ def get_long_lat(address):
 ```
 
 Now I will do the same process, import the text file, split and merge with the other one. Im hoping the ordering remains the same. The result was fairly pleasing, not a lot of missing longitudes and latitudes. 
+
+
