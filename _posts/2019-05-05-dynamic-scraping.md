@@ -1,11 +1,12 @@
 ---
 title: "Dynamic Web Scraping"
 date: 2019-05-05
-tags: [selenium, python, web-scraping, maps]
+tags: [web-scraping, maps]
 header:
-  image:"../assets/images/grand_c.jpg"
+  image:"../assets/images/halong_bay.jpg"
 excerpt: "Web Scraping an interactive map."
-mathjax: "true"
+toc_label: "Interactive Map Scraping"
+toc_icon: "map-marked"  #  Font Awesome icon name (without fa prefix)
 
 ---
 

@@ -9,14 +9,14 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Dynamic Web Scraping - Pineapple Coder</title>
+<!-- begin _includes/seo.html --><title>Dynamic Web Scraping - Pineapple Coder 🍍</title>
 <meta name="description" content="Web Scraping an interactive map.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_UK">
-<meta property="og:site_name" content="Pineapple Coder">
+<meta property="og:site_name" content="Pineapple Coder 🍍">
 <meta property="og:title" content="Dynamic Web Scraping">
 <meta property="og:url" content="http://localhost:4000/dynamic-scraping/">
 
@@ -67,7 +67,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pineapple Coder Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pineapple Coder 🍍 Feed">
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,12 +117,19 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/">Pineapple Coder</a>
+        <a class="site-title" href="/">Pineapple Coder 🍍</a>
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/about/" >About</a>
             </li><li class="masthead__menu-item">
               <a href="/projects/" >Projects</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -288,6 +295,24 @@
 
       <section class="page__content" itemprop="text">
         
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-map-marked"></i> Interactive Map Scraping</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#interactive-map-scraping">Interactive Map Scraping</a></li>
+  <li><a href="#finding-the-data-in-the-html">Finding the data in the HTML</a>
+    <ul>
+      <li><a href="#first-look">First look</a></li>
+      <li><a href="#second-look">Second look</a></li>
+    </ul>
+  </li>
+  <li><a href="#selenium-to-scrape-the-data">Selenium to scrape the data</a></li>
+  <li><a href="#cleaning-the-json-data">Cleaning the JSON data</a></li>
+  <li><a href="#finding-longitude-and-latitude">Finding Longitude and Latitude</a></li>
+</ul>
+            </nav>
+          </aside>
+        
         <h1 id="interactive-map-scraping">Interactive Map Scraping</h1>
 
 <p>The brief is to use the map on <a href="https://www.bpf.org.uk/what-we-do/bpf-build-rent-map-uk">this</a> website to get the information about BPF build to rent statistics in the UK. Initial thoughts are to scrape the full HTML and then parse through the relevant data to find the relevant information. Using python and i will assume selenium will be involved.</p>
@@ -370,14 +395,6 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
     
       
       
-      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#selenium" class="page__taxonomy-item" rel="tag">selenium</a><span class="sep">, </span>
-    
-      
-      
       <a href="/tags/#web-scraping" class="page__taxonomy-item" rel="tag">web-scraping</a>
     
     </span>
@@ -423,6 +440,12 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div class="page__footer">
@@ -471,6 +494,10 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
