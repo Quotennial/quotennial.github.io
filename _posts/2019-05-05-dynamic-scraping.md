@@ -12,20 +12,26 @@ toc_icon: "map-marked"  #  Font Awesome icon name (without fa prefix)
 
 # Interactive Map Scraping 
 
-The brief is to use the map on [this](https://www.bpf.org.uk/what-we-do/bpf-build-rent-map-uk) website to get the information about BPF build to rent statistics in the UK. Initial thoughts are to scrape the full HTML and then parse through the relevant data to find the relevant information. Using python and i will assume selenium will be involved. 
+Web-scraping can throw up lot's of different data sets, but sometimes it is not as simple as selecting a div tag. This post aims to provide an example workflow of a simple scraping project and how to create neat, alternative datasets from the web. In this example we are able to access the data held in an interactive map with a little bit of searching round the HTML script. 
 
-# Finding the data in the HTML
+The [map used](https://www.bpf.org.uk/what-we-do/bpf-build-rent-map-uk)  is created by the British Property Federation and shows build to rent statistics in the UK. Initial thoughts are to scrape the full HTML and then parse through the relevant data to find the relevant information. The preferred tool of choice is [selenium using a chrome diver](http://chromedriver.chromium.org/getting-started).
 
 ## First look
 ![image-20190129213726123](../assets/images/map_scrape/image-20190129213726123.png)
 
-So first I select a dot then find the name of the development in the HTML, all good. Then I click another circle/ marker and search the previous house, this is to try and get a better sense of where all the data is. No luck, it seems that the information is loaded on request.
+As the screenshot shows, the web client will show more information about a build to rent property when clicked on. This is a great visual tool showing the geographic distribution of these properties, but hard to do any further analysis. First select a property then find the name of the property development in the HTML, fro example:  *property_1*. Then select another property marker and search for *property_1*, this is to try and get a better sense of the structure of the HTML. No luck, it seems that the information is loaded on request.
 
 ## Second look
 
-Using [this](https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/) very helpful website I utilise the network tab in the inspect module. ![image-20190129214436938](../assets/images/map_scrape/image-20190129214436938.png)
+Using [this](https://onlinejournalismblog.com/2017/05/10/how-to-find-data-behind-chart-map-using-inspector/) very helpful website to utilise the network tab in the inspect module as shown below. ![image-20190129214436938](../assets/images/map_scrape/image-20190129214436938.png)
 
-As the top right of the inspect pane shows, the page loads a file when the marker is clicked. I inspect this file to see a JSON looking file, open the link in a new tab and see it is intact a JSON of some sort. I repeat this a couple of times and find consistent results. Now to look at the web address.
+As the top right of the inspect pane shows, the page loads a file when the marker is clicked. This element contains a  JSON-type file, opening the link directly confirms this is intact a JSON element. 
+
+```JSON
+/**/ typeof _cdbi_layer_attributes_0_4 === 'function' && _cdbi_layer_attributes_0_4({"title":"Surrey House","prs_units":322,"deliverer_contact":"Salmon Harvester Properties","buyer_funder_contact":"Salmon Harvester Properties","manager":"-","planning_status":"Detailed Application","prs_type":"Build to rent","owner":"Salmon Harvester Properties"});
+```
+
+Repeat this a couple of times and find consistent results and take note of the addresses:
 
 ```
 https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a4@abe58d5bc799578ceeba1b9ab6e7945f:1539185524180/1/attributes/265?callback=_cdbi_layer_attributes_0_20
@@ -35,25 +41,61 @@ https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a
 https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a4@abe58d5bc799578ceeba1b9ab6e7945f:1539185524180/1/attributes/506?callback=_cdbi_layer_attributes_0_4
 ```
 
-It may be a bit difficult to see in this view, but he web addresses are identical bar a number before call back and a layer attribute. I check again and purposefully change the layer attribute, there are no changes to the web page. This makes life a little easier as only need to change one element of the web address. 
+It may be a bit difficult to see in this view, but the web addresses are identical bar a number in-between the layer and call back attribute. Test out this hypothesis by only changing this number, there are no changes to the web page. This makes life a little easier as we only need to change one element of the web address. 
 
 # Selenium to scrape the data
 
-Uses selenium to scrape all the webpage. Loops through webpages using formatted string to alter the web address and store output in a text file on a new line. I'm not sure where to start from our end at, i will do a speculative loop from 0 to 1000 and see what happens. 
+Using python we can set up an empty file to hold the scraped elements and define our browser element. 
 
-**Result**: Maxed out somewhere around 568, just started returning empty JSONs but now we have  a text file with all the data, yay!! 😃
+```python
+from selenium import webdriver
+import webbrowser
+import string
+from io import open
+
+text_file = open("scraped_data.txt", "w")
+
+'''Scrapes data from interactive map.'''
+#Open the website using Chrome
+chromedriver = "pythoncode/chromedriver"
+browser =  webdriver.Chrome(chromedriver)
+
+```
+
+Loop through webpages using formatted string to alter the web address and store output in a text file on a new line. At this moment we are unsure how many properties are not his map, a speculative loop from 0 to 1000 with a try/except block should find all properties. 
+
+```python
+#Itterate through the webpages
+for property_number in range(0,1000):
+    prop_no = property_number
+    #Store results in a text file
+    with open("scraped_data.txt", "a") as f:
+        url =f"https://cartocdn-gusc-b.global.ssl.fastly.net/savills/api/v1/map/savills@465f18a4@abe58d5bc799578ceeba1b9ab6e7945f:1539185524180/1/attributes/{prop_no}?callback=_cdbi_layer_attributes_0_22"
+    try:
+        browser.get(url)
+        results = browser.page_source
+        #Only want relevant JSON, strip away the HTML
+        results = results[215:-22].encode('utf-8')
+        f.write(f"{results}\n")
+    except:
+        print(prop_no)
+        break
+         
+```
+
+
+
+**Result**: The script maxed out somewhere around 568, we now we have  a text file with all the data.
 
 # Cleaning the JSON data
 
-Maybe I like to make things difficult for myself, but I was thinking create a parser. An esteemed colleague suggested the excel split tool: they were correct. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.![image-20190129233250146](../assets/images/map_scrape/image-20190129233250146.png)
+Maybe a parser whilst the data is being scraped would have provided a more robust solution, however for now the excel split tool will suffice. Less than a minute using the import external data tool and we have a clean looking dataset. We also have more features then shown on the website so that is nice.![image-20190129233250146](../assets/images/map_scrape/image-20190129233250146.png)
 
 
 
-# Finding Longitude and Latitude
+# Adding Longitude and Latitude
 
-Not hopeful about this one but we may as well give it a go. I'm thinking google maps api, it looks like a good route. So it is after fiddling with the api key i have successfully found the geocode google api to be exactly what we need. I create a loop to input the addresses from the csv and pass that as an argument to the google api. I write these to a new text file to keep things separate, there is definitely a more efficient way to do this. 
-
-The python code is extremely messy, use a function to call the API, loop and append the text file. Messy stuff.
+In this proves we have lost the longitude and latitude element of the data. An extremely useful tool provided by google is the google maps api. The set up can be a bit fiddly but the documentation is really clear if you have never used it before. The [geocode google api](https://developers.google.com/maps/documentation/geocoding/start) is exactly what we need. Create a function to take the addresses from the csv file as input, pass that as an argument to the google api and return the longitude and latitude. 
 
 ```python
 def get_long_lat(address):
@@ -62,7 +104,7 @@ def get_long_lat(address):
         geocode_result = gmaps.geocode(address)
         #returns a JSON type value
         result = (geocode_result[0])
-        location_dict = result.get('geometry')      #get the right dictionary
+        location_dict = result.get('geometry')      #get part of the return object
         location = location_dict.get('location')
         return(location)
     except:
@@ -70,6 +112,9 @@ def get_long_lat(address):
         print(f"{address} not found")
 ```
 
-Now I will do the same process, import the text file, split and merge with the other one. Im hoping the ordering remains the same. The result was fairly pleasing, not a lot of missing longitudes and latitudes. 
+Create a function to iterate through the original csv file and append the relevant lonagiufde and latitude values. We now have a clean data set that can be used with other location specific variables or distance related calculations. 
+
+I hope this has been a useful run through of an example web-scraping project. Any thoughts or comments please let me know! You can find my socials on the left. 
+
 
 
