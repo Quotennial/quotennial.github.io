@@ -22,4 +22,3 @@ header:
 
 
 
-List of all my blogs
