@@ -7,8 +7,9 @@ header:
 ---
 
 
-I am a MSc Computer Science Student with a background in economic geography currenlty based in London. Interested in cities, innovation systems, economic growth and everything inbetween. 
+I am a MSc Computer Science Student with a background in economic geography, based in London. Interested in cities, innovation systems, economic growth and everything inbetween. 
 
-Currenlty researching innovation using patent networks, loking at the spatial distribution and local factors affecting innovation. Building a network of patent citations and using flow analyisis to find the most infulential pantents. 
+Currently researching innovation using patent networks, loking at the spatial distribution and local factors affecting innovation. Building a network of patent citations and using flow analyisis to find the most infulential pantents. 
 
-This personal blog will contain data-science projects using Machine Learning tools and creating data visualisations. 'Home Hacks' contain personal projects from tv-shows to music.
+This personal blog will contain some data-science projects using Machine Learning tools and creating data visualisations alongside some hobby projects.  Hopefully there is something for everyone in these articles, whether it is the results, methods or use of API’s. I hope you enjoy reading and please let me know what you think!
+
