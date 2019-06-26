@@ -3,7 +3,7 @@ title: "Dynamic Web Scraping"
 date: 2019-05-05
 tags: [web-scraping, maps]
 header:
-  image:"../assets/images/halong_bay.jpg"
+  overlay_image:"../assets/images/halong_bay.jpg"
 excerpt: "Web Scraping an interactive map."
 toc_label: "Interactive Map Scraping"
 toc_icon: "map-marked"  #  Font Awesome icon name (without fa prefix)
