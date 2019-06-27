@@ -3,7 +3,7 @@ title: "Love Island Sentiment Analysis"
 date: 2019-05-05
 tags: [sentiment-analysis, twitter]
 header:
-  image:"../assets/images/love_island/loveisland_banner.png"
+  overlay_image:"../assets/images/love_island/loveisland_banner.png"
 excerpt: "Using the witter API to see how we feel about Love Island"
 toc_label: "Love Island Sentiment Analysis"
 toc_icon: "umbrella-beach"  #  Font Awesome icon name (without fa prefix)
@@ -132,3 +132,5 @@ def append_analysis(*search_terms):
 ```
 
 We can use a list of names in the villa currently in a `for` loop to store each score. 
+
+# Love Island Results
