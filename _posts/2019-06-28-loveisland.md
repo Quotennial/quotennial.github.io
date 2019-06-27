@@ -179,7 +179,7 @@ print_analysis("#loveisland")
 
 As the figure shows, there is a positive sentiment relating to the show. Lot's of excitement, however the classification also provides the subjectivity score, we can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test, as we use more excitable language we may stray from strictly the facts and us language to express how we feel.
 
-# Sentiment through time
+# Regular Sentiment Checker
 
 By altering the `print_analysis` function to store the sentiment scores, we are able to track sentiment through time. the function now appends the sentiment scores to a csv file. 
 
