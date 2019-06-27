@@ -227,7 +227,7 @@ No competition, Yewande is very much the front runner in this, considering she h
 
 
 
-![Yewande](/Users/yusufsohoye/quotennial.github.io/assets/images/love_island/Yewande.gif)
+![Yewande](../assets/images/love_island/Yewande.gif)
 
 ## Sentiment Over Time
 
