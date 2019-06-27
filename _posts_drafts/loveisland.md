@@ -134,3 +134,10 @@ def append_analysis(*search_terms):
 We can use a list of names in the villa currently in a `for` loop to store each score. 
 
 # Love Island Results
+
+
+
+
+
+
+
