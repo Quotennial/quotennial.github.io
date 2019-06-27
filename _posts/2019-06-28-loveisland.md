@@ -1,7 +1,7 @@
 ---
 title: "Love Island Twitter Analysis"
 date: 2019-05-05
-tags: [sentiment-analysis, twitter]
+tags: [sentiment-analysis]
 header:
   overlay_image:"../assets/images/love_island/loveisland_banner.png"
 excerpt: "Using the witter API to see how we feel about Love Island"
@@ -54,7 +54,7 @@ Before we start asking twitter for some tweets, maybe now is a good time to talk
 
 ## Bag of words method
 
-###Tokenisation
+##Tokenisation
 
 The **bag of words** method starts by accessing all the words in a piece of text removing grammar and disregarding word order, this is in the tokenisation stage. We can take the lyrics from *Feeling Good*
 
@@ -94,7 +94,7 @@ After these tokens are split we can use  speech tagging methods to get a better 
 
 These tags are able to classify the individual tokens into Noun Plural (NNS), Adjective (JJ) and others, full list can be found [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). From here we can do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space. 
 
-###Stemming and Lemitisation
+##Stemming and Lemmatisation
 
 We can also use stemming and lemmatisation to get all possible versions of the word. Stemming works by cutting off the end or the beginning of the word, taking into account a list of common prefixes and suffixes that can be found in an inflected word.
 
@@ -110,7 +110,7 @@ Lemitisation  takes into consideration the morphological analysis of the words.
 | Studies  | Study |
 | Studying | Study |
 
-###Sentiment
+##Sentiment
 
 In simple terms, sentiment analysis is used to find the author’s attitude towards something. Tools aim to categorise pieces of text as positive, neutral, or negative. Sentiment analysis utilises tokenisation and uses algorithms designed to identify positive and negative words to gain the overall text sentiment. 
 
@@ -211,7 +211,7 @@ We also use sentiment totals, not average, as we want to obtain a magnitude scor
 
 This total score was calculated from the period DD/MM -DD/MM. The 
 
-![sentiment_total](/Users/yusufsohoye/quotennial.github.io/assets/images/love_island/sentiment_total.png)
+![sentiment_total](../assets/images/love_island/sentiment_total.png)
 
 As shown, Michael is by far an away the most popular islander over the course of the week. 
 
@@ -219,7 +219,7 @@ As shown, Michael is by far an away the most popular islander over the course of
 
 ## Most Talked about Islander
 
-![total_tweets](/Users/yusufsohoye/quotennial.github.io/assets/images/love_island/total_tweets.png)
+![total_tweets](../assets/images/love_island/total_tweets.png)
 
 No competition, Yewande is very much the front runner in this, considering she hasn't been on the island for the whole duration of the data set this is very impressive. At the other end of the table, Arabella's mentions may not be fully captured as domain knowledge informs me twitter doesn't actually refer to her by her actual name, a large variety of aliases are used instead. Here's Yewande walking to the top of the mentions:
 
