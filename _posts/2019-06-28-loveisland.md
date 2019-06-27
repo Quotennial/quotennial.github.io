@@ -54,9 +54,9 @@ Before we start asking twitter for some tweets, maybe now is a good time to talk
 
 The phrase could be an instruction to fly (verb) over the boat which has a red forward part. The picture shows an example of another meaning, with the flay (noun) holding a red bow. This rather obscure example is for illustrative purposes, but many of these semantics occur in text on a regular basis. 
 
-## Bag of words method
+# Bag of words method
 
-##Tokenisation
+## Tokenisation
 
 The **bag of words** method starts by accessing all the words in a piece of text removing grammar and disregarding word order, this is in the tokenisation stage. We can take the lyrics from *Feeling Good*
 
@@ -96,7 +96,7 @@ After these tokens are split we can use  speech tagging methods to get a better 
 
 These tags are able to classify the individual tokens into Noun Plural (NNS), Adjective (JJ) and others, full list can be found [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). From here we can do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space. 
 
-##Stemming and Lemmatisation
+## Stemming and Lemmatisation
 
 We can also use stemming and lemmatisation to get all possible versions of the word. Stemming works by cutting off the end or the beginning of the word, taking into account a list of common prefixes and suffixes that can be found in an inflected word.
 
@@ -112,7 +112,7 @@ Lemitisation  takes into consideration the morphological analysis of the words.
 | Studies  | Study |
 | Studying | Study |
 
-##Sentiment
+## Sentiment
 
 In simple terms, sentiment analysis is used to find the author’s attitude towards something. Tools aim to categorise pieces of text as positive, neutral, or negative. Sentiment analysis utilises tokenisation and uses algorithms designed to identify positive and negative words to gain the overall text sentiment. 
 
@@ -239,7 +239,7 @@ This may look like a muddle of squiggles, but if you pick out an islander you ca
 
 Thanks for reading, I hope this has been a helpful introduction into tweepy and sentiment analysis. If you did enjoy the Love Island theme or have any other thoughts then please let me know!
 
-#P.S. - More Serious Application
+# P.S. - More Serious Application
 
 The same methods can be applied to politics and brand management. To be able to access the general publics sentiment about your product is a key tool in the armoury for these organisations.
 
