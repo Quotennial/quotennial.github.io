@@ -52,6 +52,8 @@ Before we start asking twitter for some tweets, maybe now is a good time to talk
 
 ![maxresdefault](../assets/images/love_island/maxresdefault.jpg)
 
+The phrase could be an instruction to fly (verb) over the boat which has a red forward part. The picture shows an example of another meaning, with the flay (noun) holding a red bow. This rather obscure example is for illustrative purposes, but many of these semantics occur in text on a regular basis. 
+
 ## Bag of words method
 
 ##Tokenisation
