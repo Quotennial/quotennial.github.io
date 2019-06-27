@@ -113,7 +113,6 @@ def get_long_lat(address):
 
 Create a function to iterate through the original csv file and append the relevant lonagiufde and latitude values. We now have a clean data set that can be used with other location specific variables or distance related calculations. 
 
-I hope this has been a useful run through of an example web-scraping project. Any thoughts or comments please let me know! You can find my socials on the left. 
-
+I hope this has been a useful run through of an example web-scraping project. Any thoughts or comments please let me know!
 
 
