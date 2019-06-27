@@ -229,7 +229,7 @@ No competition, Yewande is very much the front runner in this, considering she h
 
 ## Sentiment Over Time
 
-![sent_time](/Users/yusufsohoye/quotennial.github.io/assets/images/love_island/sent_time.png)
+![sent_time](../assets/images/love_island/sent_time.png)
 
 
 
