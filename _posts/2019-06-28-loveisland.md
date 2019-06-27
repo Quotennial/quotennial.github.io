@@ -211,7 +211,7 @@ We also use sentiment totals, not average, as we want to obtain a magnitude scor
 
 ## Total Sentiment
 
-This total score was calculated from the period DD/MM -DD/MM. The 
+This total score was calculated from the period 20/06 -27/06. The 
 
 ![sentiment_total](../assets/images/love_island/sentiment_total.png)
 
