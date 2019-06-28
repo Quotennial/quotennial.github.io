@@ -10,9 +10,9 @@ toc_icon: "umbrella-beach"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
-This article will look at the twittersphere in relation to this years Love Island series. If you want to skip straight to the Love Island results, feel free to do so using the contents navigator. In this article we will use the twitter API to gauge sentiment about Love Island contestants. As well as using the Twitter API we will also use [TextBlob](https://textblob.readthedocs.io/en/dev/quickstart.html) to parse our selected tweets and use the natural language processing tools in the package.
+This article will look at the twittersphere in relation to this year's Love Island series. If you want to skip straight to the Love Island results, feel free to do so using the contents navigator. In this article we will use the twitter API to gauge sentiment about Love Island contestants. In addition we will also use [TextBlob](https://textblob.readthedocs.io/en/dev/quickstart.html) to parse our selected tweets and use the natural language processing tools in the package.
 
-Firstly lets import the packages we will be using including some visualisation libraries. 
+Firstly let's import the packages we will be using including some visualisation libraries. 
 
 ```python
 import tweepy
@@ -25,7 +25,7 @@ import datetime
 
 # Twitter API
 
-To make use of the twitter API you must register a developer account which can be linked to your personal account. To do so use this [link](https://apps.twitter.com/) and follow the instructions, the process shouldn't take too long. After you have successfully registered, we need to define our API Keys:
+To make use of the twitter API, you must register a developer account which can be linked to your personal account. To do so use this [link](https://apps.twitter.com/) and follow the instructions, the process shouldn't take too long. After you have successfully registered, we need to define our API Keys:
 
 ```python
 # Define API keys
@@ -44,25 +44,25 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 ```
 
-Now we have successfully connected to the twitter API we are ready to collect some tweets. 
+Now that we have successfully connected to the twitter API, we are ready to collect some tweets. 
 
 # Sentiment Analysis
 
-Before we start asking twitter for some tweets, maybe now is a good time to talk about what it is. Sentiment analysis is part of the broader Natural Language Processing tools,  language is tricky for computers, words have many meanings and sarcasm is hard to pick up across text, therefore context is often key. These issues are illustrated in the image below:
+Before we start asking twitter for some some tweets, let's first talk about what's meant by sentiment analysis. Sentiment analysis is part of the broader Natural Language Processing tools. Since language is tricky for computers, words have many meanings and sarcasm is hard to pick up across text, therefore context is often key. These issues are illustrated in the image below:
 
 ![maxresdefault](../assets/images/love_island/maxresdefault.jpg)
 
-The phrase could be an instruction to fly (verb) over the boat which has a red forward part. The picture shows an example of another meaning, with the flay (noun) holding a red bow. This rather obscure example is for illustrative purposes, but many of these semantics occur in text on a regular basis. 
+The phrase could be an instruction to fly (verb) over the boat which has a red forward part. The picture shows an example of another meaning, with the fly (noun) holding a red bow. This rather obscure example is for illustrative purposes, but many of these semantics occur in text on a regular basis. 
 
 # Bag of words method
 
 ## Tokenisation
 
-The **bag of words** method starts by accessing all the words in a piece of text removing grammar and disregarding word order, this is in the tokenisation stage. We can take the lyrics from *Feeling Good*
+The **bag of words** method starts by accessing all the words in a piece of text, removing grammar and disregarding word order, this is in the tokenisation stage. We can take the lyrics from *Feeling Good*
 
 ```python
-lyrics = TextBlob("""Birds flying high you know how I feel
-Sun in the sky you know how I feel""")
+lyrics = TextBlob("""Birds flying high, you know how I feel.
+Sun in the sky, you know how I feel.""")
 lyrics.words
 ```
 
@@ -73,6 +73,10 @@ WordList(['Birds', 'flying', 'high', 'you', 'know', 'how', 'I', 'feel', 'Sun', '
 ```
 
 After these tokens are split we can use  speech tagging methods to get a better sense of the composition of the sentence:
+
+```python
+lyrics.tags
+```
 
 ```
 [('Birds', 'NNS'),
@@ -94,7 +98,7 @@ After these tokens are split we can use  speech tagging methods to get a better 
  ('feel', 'VBP')]
 ```
 
-These tags are able to classify the individual tokens into Noun Plural (NNS), Adjective (JJ) and others, full list can be found [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). From here we can do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space. 
+These tags are able to classify the individual tokens into Noun Plural (NNS), Adjective (JJ) and others, full list available [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). Now we can begin to do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space.
 
 ## Stemming and Lemmatisation
 
@@ -114,19 +118,17 @@ Lemitisation  takes into consideration the morphological analysis of the words.
 
 ## Sentiment
 
-In simple terms, sentiment analysis is used to find the author’s attitude towards something. Tools aim to categorise pieces of text as positive, neutral, or negative. Sentiment analysis utilises tokenisation and uses algorithms designed to identify positive and negative words to gain the overall text sentiment. 
+In simple terms, sentiment analysis is used to find the author’s attitude towards something. Tools aim to categorise pieces of text as positive, neutral, or negative. Sentiment analysis utilises tokenisation and algorithms designed to identify positive and negative words to gain the overall text sentiment. 
 
 > I ***hate*** liars so much Tom needs to go 😡 #LoveIsland 
 
-The above tweet was given a polarity score of -0.30000000000000004, negative number signifying negative sentiment. 
+The above tweet was given a polarity score of -0.30000000000000004, negative number signifying negative sentiment on a scale of -1 to +1. 
 
 TextBlob is one implementation of Natural Language Processing and is built on the Natural Language Toolkit [library](http://www.nltk.org). If you would like to know more about natural language processing, [this article](https://medium.com/@ageitgey/natural-language-processing-is-fun-9a0bff37854e) could be a good place to start.
 
-
-
 # TextBlob
 
-The TextBlob documentation provides some useful code examples with many more elsewhere online. We are able to write a function to get the sentiment scores from a string. The input will be tweets for us.
+The library we will use for Natural Language processing in python is the TextBlob package. The TextBlob documentation provides some useful code examples with many more elsewhere online. We are able to write a function to get the sentiment scores from a string. The input will be tweets for us.
 
 ```python
 def get_sentiment_scores(search_string):
@@ -152,7 +154,7 @@ The search string is the term we're looking for, it would be the term you would 
 
 ## Plotting
 
-To plot our results we may use the seaborn joint plot. This will allow us to plot the sentiment against the subjectivity. This function calls the previous get sentiment function to get the sentiment scores and plots it.
+To plot our results we may use the seaborn joint plot. This will allow us to retrieve and plot the sentiment scores against the subjectivity scores. This function calls the previous `get_sentiment_scores` function to get the sentiment scores and then plot it.
 
 ```python
     '''Takes search terms, passed to obtain scores, then prints a joint plot'''
@@ -177,7 +179,7 @@ print_analysis("#loveisland")
 
 ![loveisland_sentiment](../assets/images/love_island/loveisland_sentiment.png)
 
-As the figure shows, there is a positive sentiment relating to the show. Lot's of excitement, however the classification also provides the subjectivity score, we can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test, as we use more excitable language we may stray from strictly the facts and us language to express how we feel.
+As the figure shows, there is a positive sentiment relating to the show. Lot's of excitement, however the classification also provides the subjectivity score, we can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test, as we use more excitable language we may stray from strictly the facts and use language to express how we feel.
 
 # Regular Sentiment Checker
 
@@ -205,7 +207,7 @@ We can use a list of names in the villa currently in a `for` loop to store each 
 
 ![curtis](../assets/images/love_island/curtis.gif)
 
-Finally, using the methods above, we are able to iterate through tweets mentioning each individual islander to get the sentiment scores from the twittersphere. The program was run around midday every day, this done in order to get a more representative sample as the twists and turns of each episode may skew the tweets if scraping was done during the episode.  
+Finally, using the methods above, we are able to iterate through tweets mentioning each individual islander to get the sentiment scores from the twittersphere. The programme was run around midday every day, in order to get a more representative sample as twists and turns of each episode may skew the tweets if scraping was done during the episode.  
 
 We also use sentiment totals, not average, as we want to obtain a magnitude score. The average will standardise the result, summing the total would mean if there are more people tweeting then we can see a larger sentiment score (either positive or negative). If people were feeling really positive about someone, then more people would be tweeting about them leading to a higher score, taking the mean sentiment values would lose this characteristic that implicitly measures the number of tweets mentioning about the individual islander.
 
