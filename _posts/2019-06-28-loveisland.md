@@ -4,7 +4,7 @@ date: 2019-05-05
 tags: [sentiment-analysis]
 header:
   overlay_image:"../assets/images/love_island/loveisland_banner.png"
-excerpt: "Using the witter API to see how we feel about Love Island"
+excerpt: "Using the Twitter API to see how we feel about Love Island"
 toc_label: "Love Island Sentiment Analysis"
 toc_icon: "umbrella-beach"  #  Font Awesome icon name (without fa prefix)
 
