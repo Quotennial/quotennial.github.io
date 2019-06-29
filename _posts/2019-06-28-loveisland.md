@@ -10,7 +10,7 @@ toc_icon: "umbrella-beach"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
-This article will look at the twittersphere in relation to this year's Love Island series. If you want to skip straight to the Love Island results, feel free to do so using the contents navigator. In this article we will use the twitter API to gauge sentiment about Love Island contestants. In addition we will also use [TextBlob](https://textblob.readthedocs.io/en/dev/quickstart.html) to parse our selected tweets and use the natural language processing tools in the package.
+This article will look at the twittersphere in relation to this year's Love Island series. If you want to skip straight to the Love Island results, feel free to do so using the contents navigator. In this article we will use the Twitter API to gauge sentiment about Love Island contestants. In addition we will also use [TextBlob](https://textblob.readthedocs.io/en/dev/quickstart.html) to parse our selected tweets and use the natural language processing tools in the package.
 
 Firstly let's import the packages we will be using including some visualisation libraries. 
 
@@ -25,7 +25,7 @@ import datetime
 
 # Twitter API
 
-To make use of the twitter API, you must register a developer account which can be linked to your personal account. To do so use this [link](https://apps.twitter.com/) and follow the instructions, the process shouldn't take too long. After you have successfully registered, we need to define our API Keys:
+To make use of the twitter API, you must register a developer account which can be linked to your personal account. To do so use this [link](https://apps.twitter.com/) and follow the instructions. The process shouldn't take too long. After you have successfully registered, we need to define our API Keys:
 
 ```python
 # Define API keys
@@ -48,17 +48,19 @@ Now that we have successfully connected to the twitter API, we are ready to coll
 
 # Sentiment Analysis
 
-Before we start asking twitter for some some tweets, let's first talk about what's meant by sentiment analysis. Sentiment analysis is part of the broader Natural Language Processing tools. Since language is tricky for computers, words have many meanings and sarcasm is hard to pick up across text, therefore context is often key. These issues are illustrated in the image below:
+Before we start asking Twitter for some some tweets, let's first talk about what sentiment analysis is. Sentiment analysis is part of the broader Natural Language Processing tools. Since language is tricky for for computers - words have many meanings and sarcasm is hard to pick up across text, therefore context is often key. These issues are illustrated in the example below:
 
 ![maxresdefault](../assets/images/love_island/maxresdefault.jpg)
 
-The phrase could be an instruction to fly (verb) over the boat which has a red forward part. The picture shows an example of another meaning, with the fly (noun) holding a red bow. This rather obscure example is for illustrative purposes, but many of these semantics occur in text on a regular basis. 
+This example could be an instruction to fly (verb) over the boat, or it could be a description of a fly (noun) over the boat. In addition, it could mean that the boat has a red front part (bow), or it might be that the fly has a red accessory with which he can play the violin (bow).
+
+This rather obscure example is for illustrative purposes, but complicated semantics occur in everyday text on a regular basis.
 
 # Bag of words method
 
 ## Tokenisation
 
-The **bag of words** method starts by accessing all the words in a piece of text, removing grammar and disregarding word order, this is in the tokenisation stage. We can take the lyrics from *Feeling Good*
+One approach to managing text is the bag of words method. The **bag of words** method starts by accessing all the words in a piece of text, removing grammar and disregarding word order. This is in the tokenisation stage. We can take the lyrics from Nina Simone's seminal classic *Feeling Good*
 
 ```python
 lyrics = TextBlob("""Birds flying high, you know how I feel.
@@ -72,7 +74,7 @@ Our TextBlob library very helpfully splits the words into individual 'tokens' fo
 WordList(['Birds', 'flying', 'high', 'you', 'know', 'how', 'I', 'feel', 'Sun', 'in', 'the', 'sky', 'you', 'know', 'how', 'I', 'feel'])
 ```
 
-After these tokens are split we can use  speech tagging methods to get a better sense of the composition of the sentence:
+After these tokens are split, we can use  speech tagging methods to get a better sense of the composition of the sentence:
 
 ```python
 lyrics.tags
@@ -98,7 +100,7 @@ lyrics.tags
  ('feel', 'VBP')]
 ```
 
-These tags are able to classify the individual tokens into Noun Plural (NNS), Adjective (JJ) and others, full list available [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). Now we can begin to do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space.
+These tags are able to classify the individual tokens, for example: Noun Plural (NNS), Adjective (JJ) and others, full list available [here](https://blog.thedigitalgroup.com/assets/uploads/POS-Tags.png). Now we can begin to do many things, like remove "stop words" which are words such as   “the”, “a”, “an”, “in”. These don't offer any new information and take up space.
 
 ## Stemming and Lemmatisation
 
@@ -124,7 +126,7 @@ In simple terms, sentiment analysis is used to find the author’s attitude towa
 
 The above tweet was given a polarity score of -0.30000000000000004, negative number signifying negative sentiment on a scale of -1 to +1. 
 
-TextBlob is one implementation of Natural Language Processing and is built on the Natural Language Toolkit [library](http://www.nltk.org). If you would like to know more about natural language processing, [this article](https://medium.com/@ageitgey/natural-language-processing-is-fun-9a0bff37854e) could be a good place to start.
+TextBlob is one implementation of Natural Language Processing and is built on the Natural Language Toolkit [library](http://www.nltk.org). If you would like to know more about natural language processing, [this article](https://medium.com/@ageitgey/natural-language-processing-is-fun-9a0bff37854e) is a good place to start.
 
 # TextBlob
 
@@ -150,11 +152,11 @@ def get_sentiment_scores(search_string):
     return (score_collect)
 ```
 
-The search string is the term we're looking for, it would be the term you would type into the twitter search bar on the web client. The `public_tweets` variable holds 100 tweets and the corresponding meta data: very messy. So we use TextBlob (which has it's own twitter methods) to parse these messy tweets into what we want, the `tweet.text`! Now we have the text, we use the TextBlob sentiment method to get the sentiment and subjectivity of each tweet. 
+The search string is the term we're looking for. It would be the term you would type into the Twitter search bar on the web client. The `public_tweets` variable holds 100 tweets and the corresponding metadata: very messy. So we use TextBlob (which has it's own twitter methods) to parse these messy tweets into what we want, the `tweet.text`! Now we have the text, we use the TextBlob sentiment method to get the sentiment and subjectivity of each tweet. 
 
 ## Plotting
 
-To plot our results we may use the seaborn joint plot. This will allow us to retrieve and plot the sentiment scores against the subjectivity scores. This function calls the previous `get_sentiment_scores` function to get the sentiment scores and then plot it.
+To plot our results we may use the seaborn joint plot, which will allow us to plot sentiment against subjectivity. This will allow us to retrieve and plot the sentiment scores against the subjectivity scores. This function calls the previous `get_sentiment_scores` function to get the sentiment scores and then plot it.
 
 ```python
     '''Takes search terms, passed to obtain scores, then prints a joint plot'''
@@ -179,11 +181,11 @@ print_analysis("#loveisland")
 
 ![loveisland_sentiment](../assets/images/love_island/loveisland_sentiment.png)
 
-As the figure shows, there is a positive sentiment relating to the show. Lot's of excitement, however the classification also provides the subjectivity score, we can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test, as we use more excitable language we may stray from strictly the facts and use language to express how we feel.
+As the figure shows, there is a positive sentiment relating to the show. Lots of excitement, however the classification also provides the subjectivity score. We can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test. As we use more excitable language we may stray from strictly the facts and use language to express how we feel.
 
 # Regular Sentiment Checker
 
-By altering the `print_analysis` function to store the sentiment scores, we are able to track sentiment through time. the function now appends the sentiment scores to a csv file. 
+By altering the `print_analysis` function to store the sentiment scores, we are able to track sentiment through time. The function now appends the sentiment scores to a csv file. 
 
 ```python
 def append_analysis(*search_terms):
@@ -201,19 +203,19 @@ def append_analysis(*search_terms):
     csvFile.close()
 ```
 
-We can use a list of names in the villa currently in a `for` loop to store each score. 
+We can loop through the list of names currently in the villa. 
 
 # Love Island Results
 
 ![curtis](../assets/images/love_island/curtis.gif)
 
-Finally, using the methods above, we are able to iterate through tweets mentioning each individual islander to get the sentiment scores from the twittersphere. The programme was run around midday every day, in order to get a more representative sample as twists and turns of each episode may skew the tweets if scraping was done during the episode.  
+Finally, using the methods above, we are able to iterate through tweets mentioning each individual islander to get the sentiment scores from the twittersphere. The programme was run around midday every day. This was done in order to get a more representative sample as twists and turns of each episode may skew the tweets if scraping was done during the episode.  
 
-We also use sentiment totals, not average, as we want to obtain a magnitude score. The average will standardise the result, summing the total would mean if there are more people tweeting then we can see a larger sentiment score (either positive or negative). If people were feeling really positive about someone, then more people would be tweeting about them leading to a higher score, taking the mean sentiment values would lose this characteristic that implicitly measures the number of tweets mentioning about the individual islander.
+We also use sentiment totals rather than the average sentiment as we want to obtain a magnitude score. The average will standardise the result, summing the total would mean if there are more people tweeting then we can see a larger sentiment score (either positive or negative). If people were feeling really positive about someone, then more people would be tweeting about them leading to a higher score, taking the mean sentiment values would lose this characteristic that implicitly measures the number of tweets mentioning about the individual islander.
 
 ## Total Sentiment
 
-This total score was calculated from the period 20/06 -27/06. The 
+This total score was calculated for the period 20/06 -27/06. The 
 
 ![sentiment_total](../assets/images/love_island/sentiment_total.png)
 
@@ -225,7 +227,7 @@ As shown, Michael is by far an away the most popular islander over the course of
 
 ![total_tweets](../assets/images/love_island/total_tweets.png)
 
-No competition, Yewande is very much the front runner in this, considering she hasn't been on the island for the whole duration of the data set this is very impressive. At the other end of the table, Arabella's mentions may not be fully captured as domain knowledge informs me twitter doesn't actually refer to her by her actual name, a large variety of aliases are used instead. Here's Yewande walking to the top of the mentions:
+No competition, Yewande is very much the front runner in this, considering she hasn't been on the island for the whole duration of the data set this is very impressive. At the other end of the table, Arabella has the fewest mentions. However, domain knowledge informs me many on Twitter use a large variety of aliases instead of her real name. Here's Yewande walking to the top of the mentions:
 
 
 
@@ -251,5 +253,5 @@ print_analysis("#boris")
 
 ​								 ![boris_sentiment](../assets/images/love_island/boris_sentiment.png)
 
-Using our `print_analysis` function we are able to search the  top 100 tweets using the #boris, and the joint plot uncovers some interesting results. The bottom dark blue spot indicates a fairly neutral tweet, we can interpret this as fact based, maybe news reports and updates. As the subjectivity increases we can see the sentiment splits, these more opinion based tweets can give us an insight into how the twittersphere is feeling about this PM candidate. 
+Using our `print_analysis` function we are able to search the  top 100 tweets using the #boris, and the joint plot uncovers some interesting results. The bottom dark blue spot indicates a fairly neutral tweet, we can interpret this as fact based, maybe news reports and updates. As the subjectivity increases we can see the sentiment splits, these more opinion based tweets can give us an insight into how the twittersphere is feeling about this British prime ministerial candidate. 
 
