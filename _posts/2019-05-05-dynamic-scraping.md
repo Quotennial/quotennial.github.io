@@ -117,8 +117,3 @@ def get_long_lat(address):
 We then create a function to iterate through the original csv file and append the relevant longitude and latitude values. We now have a clean data set that can be used with other location specific variables or distance-related calculations. 
 
 This project has enabled us to generate a data set from an online visualisation tool. Using the built in "inspect element" tools in our browsers, we can create aggregated the information and allow us to perform more in-depth analysis. I hope this has been a useful run through of an example web-scraping project. Any thoughts or comments please let me know!
-
-
-
-
-<div class="iactiveImg" data-ii="7505"></div><script src="https://interactive-img.com/js/include.js"></script>
