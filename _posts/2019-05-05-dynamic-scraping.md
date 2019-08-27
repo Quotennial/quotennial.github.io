@@ -120,7 +120,5 @@ This project has enabled us to generate a data set from an online visualisation 
 
 
 
-<script>
-  <div class="iactiveImg" data-ii="7505"></div><script src="https://interactive-img.com/js/include.js"></script>
-</script>
 
+<div class="iactiveImg" data-ii="7505"></div><script src="https://interactive-img.com/js/include.js"></script>
