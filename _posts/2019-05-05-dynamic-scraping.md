@@ -119,3 +119,23 @@ We then create a function to iterate through the original csv file and append th
 This project has enabled us to generate a data set from an online visualisation tool. Using the built in "inspect element" tools in our browsers, we can create aggregated the information and allow us to perform more in-depth analysis. I hope this has been a useful run through of an example web-scraping project. Any thoughts or comments please let me know!
 
 
+
+
+
+
+
+<script>
+<p>Click on the sun or on one of the planets to watch it closer:</p>
+
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+
+</script>
+
+
+
