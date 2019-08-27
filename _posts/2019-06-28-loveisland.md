@@ -50,7 +50,7 @@ Now that we have successfully connected to the twitter API, we are ready to coll
 
 Before we start asking Twitter for some some tweets, let's first talk about what sentiment analysis is. Sentiment analysis is part of the broader Natural Language Processing tools. Since language is tricky for for computers - words have many meanings and sarcasm is hard to pick up across text, therefore context is often key. These issues are illustrated in the example below:
 
-![maxresdefault](../assets/images/love_island/maxresdefault.jpg)
+![maxresdefault](../assets/images/love_island/maxresdefault.jpg){: .align-center}
 
 This example could be an instruction to fly (verb) over the boat, or it could be a description of a fly (noun) over the boat. In addition, it could mean that the boat has a red front part (bow), or it might be that the fly has a red accessory with which he can play the violin (bow).
 
@@ -179,7 +179,7 @@ Using the `print_analysis` function we are able to pass in a search term gatheri
 print_analysis("#loveisland")
 ```
 
-![loveisland_sentiment](../assets/images/love_island/loveisland_sentiment.png)
+![loveisland_sentiment](../assets/images/love_island/loveisland_sentiment.png){: .align-center}
 
 As the figure shows, there is a positive sentiment relating to the show. Lots of excitement, however the classification also provides the subjectivity score. We can see the more extreme the sentiment scores, the more subjective a tweet is likely to be. These are the tweets in the top right of the figure. This passes the common sense test. As we use more excitable language we may stray from strictly the facts and use language to express how we feel.
 
@@ -207,7 +207,7 @@ We can loop through the list of names currently in the villa.
 
 # Love Island Results
 
-![curtis](../assets/images/love_island/curtis.gif)
+![curtis](../assets/images/love_island/curtis.gif){: .align-center}
 
 Finally, using the methods above, we are able to iterate through tweets mentioning each individual islander to get the sentiment scores from the twittersphere. The programme was run around midday every day. This was done in order to get a more representative sample as twists and turns of each episode may skew the tweets if scraping was done during the episode.  
 
@@ -217,25 +217,25 @@ We also use sentiment totals rather than the average sentiment as we want to obt
 
 This total score was calculated for the period 20/06 -27/06. The 
 
-![sentiment_total](../assets/images/love_island/sentiment_total.png)
+![sentiment_total](../assets/images/love_island/sentiment_total.png){: .align-center}
 
 As shown, Michael is by far an away the most popular islander over the course of the week. 
 
-![michael](../assets/images/love_island/michael.gif)
+![michael](../assets/images/love_island/michael.gif){: .align-center}
 
 ## Most Talked about Islander
 
-![total_tweets](../assets/images/love_island/total_tweets.png)
+![total_tweets](../assets/images/love_island/total_tweets.png){: .align-center}
 
 No competition, Yewande is very much the front runner in this, considering she hasn't been on the island for the whole duration of the data set this is very impressive. At the other end of the table, Arabella has the fewest mentions. However, domain knowledge informs me many on Twitter use a large variety of aliases instead of her real name. Here's Yewande walking to the top of the mentions:
 
 
 
-![Yewande](../assets/images/love_island/Yewande.gif)
+![Yewande](../assets/images/love_island/Yewande.gif){: .align-center}
 
 ## Sentiment Over Time
 
-![sent_time](../assets/images/love_island/sent_time.png)
+![sent_time](../assets/images/love_island/sent_time.png){: .align-center}
 
 
 
@@ -251,7 +251,7 @@ The same methods can be applied to politics and brand management. To be able to 
 print_analysis("#boris")
 ```
 
-​								 ![boris_sentiment](../assets/images/love_island/boris_sentiment.png)
+​								 ![boris_sentiment](../assets/images/love_island/boris_sentiment.png){: .align-center}
 
 Using our `print_analysis` function we are able to search the  top 100 tweets using the #boris, and the joint plot uncovers some interesting results. The bottom dark blue spot indicates a fairly neutral tweet, we can interpret this as fact based, maybe news reports and updates. As the subjectivity increases we can see the sentiment splits, these more opinion based tweets can give us an insight into how the twittersphere is feeling about this British prime ministerial candidate. 
 
