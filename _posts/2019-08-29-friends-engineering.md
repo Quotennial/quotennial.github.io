@@ -17,7 +17,7 @@ Each script is a text file containing some information about the episode, the ti
 
 We will start trying to iterate through the scripts. They are stored in multiple text files and helpfully titled using the format `season.episode`. We can utilise the OS library in python to navigate through our text files. 
 
-![scriptfiles](/Users/yusufsohoye/quotennial.github.io/assets/images/friends/scriptfiles.png){: .align-center}
+![scriptfiles](../assets/images/friends/scriptfiles.png){: .align-center}
 
 As it stands, the code below will iterate through all the files in our `scripts` folder to obtain the `filename`. This filename is then split using the `.` separator and those numbers are stored in variables to be appended to the master list. The `master_list` is created as eventually we will want to store the results in a DataFrame.
 
@@ -70,7 +70,7 @@ This is combined with our loop in the previous section and the `mater_array` is 
 
 # Cleaning 
 
-Despite our best efforts, the results are still not 100% ready for analysis. Our first issue is that there are multiple names for each character, this can be seen by executing `sorted(df['char'].unique())`, this will return a list of all unique values in the column. To rectify this takes some manual work which involves looking at the multiple spellings of a certain name, case sensitive!
+Despite our best efforts, the results are still not 100% ready for analysis. Our first issue is that there are multiple names for each character, this can be seen by executing `sorted(df['char'].unique())`, this will return a list of all unique values in the column. To rectify this takes some manual work which involves looking at the multiple spellings of a certain name, case sensitive! To change the names we use the pandas `replace` method:
 
 ```python
 # Ensure all names are refering to the correct person
