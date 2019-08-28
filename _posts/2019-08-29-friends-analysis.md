@@ -7,9 +7,9 @@ toc_label: "FRIENDS Data Analysis"
 toc_icon: "mug-hot"  #  Font Awesome icon name (without fa prefix)
 ---
 
+Better intro needed
 
-
-This post will use the data collected in a previous post to analyse the T.V.show FRIENDS. It has been a really enjoyable hobby projected one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy!
+This article will use the data collected in a [previous post](https://quotennial.github.io/friends-engineering/) to analyse the T.V.show FRIENDS. It has been a really enjoyable hobby projected one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy!
 
 # The Most Popular Friend
 
