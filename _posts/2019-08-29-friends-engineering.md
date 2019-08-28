@@ -110,8 +110,12 @@ Now this may not be a necessary step as most of the SQL commands we would be usi
 ```python
 import sqlite3
 conn = sqlite3.connect('friends_script.db') #connect to the database
-df.to_sql('lines', conn, if_exists='replace', index=False) # overwite the lines table
+df.to_sql('lines', conn, if_exists='replace', index=False) # save into the 'lines' table
 ```
+
+| season      | episode      | char                 | line        | line_sent               |
+| ----------- | ------------ | -------------------- | ----------- | ----------------------- |
+| season(int) | episode(int) | Character Name (str) | speech(str) | sentiment score (float) |
 
 Finally our scripts are formatted and placed in a SQL database. Data wrangling in this way can transform raw data into a more useful data set. Even though we are not adding too much to the data set, the different organisational structure can enable a wider breadth of analysis. Now we have the scripts formatted in this way, we can utilise SQL to gain further insights into the show.
 
