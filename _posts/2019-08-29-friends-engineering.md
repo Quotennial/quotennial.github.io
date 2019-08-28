@@ -7,7 +7,7 @@ toc_label: "FRIENDS Data Engineering"
 toc_icon: "database"  #  Font Awesome icon name (without fa prefix)
 ---
 
-This post will provide an in-depth walkthrough of how to format and export text files into a SQLite database using python. The text files used in this projects contain all scripts from the T.V. show F.R.I.E.N.D.S. and was downloaded from [this repository](https://fangj.github.io/friends/). The aim of this project is to provide a more accessible data set to better serve analysis to be completed in another blog post. 
+This post will provide an in-depth walkthrough of how to format and export text files into a SQLite database using python. The text files used in this projects contain all scripts from the T.V. show F.R.I.E.N.D.S. and was downloaded from [this repository](https://fangj.github.io/friends/). The aim of this project is to provide a more accessible data set to better serve analysis to be completed in [this blog post](). 
 
 # Iterating Through Scripts
 

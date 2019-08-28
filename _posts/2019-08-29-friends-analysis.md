@@ -1,5 +1,5 @@
 ---
-title: "The One with the FRIENDS Data Analysis"
+title: "The One with the Data Analysis"
 date: 2019-08-29
 tags: [visualisations]
 excerpt: "Analysing the FRIENDS series using the show scripts."
@@ -7,7 +7,7 @@ toc_label: "FRIENDS Data Analysis"
 toc_icon: "mug-hot"  #  Font Awesome icon name (without fa prefix)
 ---
 
-[TOC]
+
 
 This post will use the data collected in a previous post to analyse the T.V.show FRIENDS. It has been a really enjoyable hobby projected one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy!
 
@@ -15,7 +15,7 @@ This post will use the data collected in a previous post to analyse the T.V.show
 
 This section looks at each character's role in the show. The previous post walked through the process of putting the data into a SQL database. This was in order to make a query like "who had the most number of lines during the whole show" fairly simple:
 
-```sqlite
+```sql
 SELECT char, COUNT(line) AS 'spoken_lines'
 FROM lines
 GROUP BY  char
@@ -55,7 +55,7 @@ smelly cat
 
 ![wisdomous](../assets/images/friends/wisdomous.gif){: .align-center}
 
-```sqlite
+```sql
 SELECT char, line
 FROM lines
 WHERE char IN ('Rachel', 'Ross', 'Monica','Chandler','Joey', 'Phoebe')
