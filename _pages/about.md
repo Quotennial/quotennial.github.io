@@ -7,7 +7,7 @@ header:
 ---
 
 
-I am a MSc Computer Science Student with a background in economic geography, based in London. Interested in cities, innovation systems, economic growth and everything inbetween. 
+I am a MSc Computer Science Student with a background in Economic Geography, based in London. Interested in cities, innovation systems, economic growth and everything inbetween. 
 
 Currently researching innovation using patent networks, looking at the spatial distribution and local factors affecting innovation. Building a network of patent citations and using flow analyisis to find the most infulential pantents. 
 
