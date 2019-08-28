@@ -1,13 +1,11 @@
 ---
-title: "The One with the FRIENDS Data Engineering"
+title: "The One with the Data Engineering"
 date: 2019-08-29
 tags: [engineering, SQL]
 excerpt: "Cleaning and formatting FRIENDS scripts into a SQLite database"
 toc_label: "FRIENDS Data Engineering"
 toc_icon: "database"  #  Font Awesome icon name (without fa prefix)
 ---
-
-[TOC]
 
 This post will provide an in-depth walkthrough of how to format and export text files into a SQLite database using python. The text files used in this projects contain all scripts from the T.V. show F.R.I.E.N.D.S. and was downloaded from [this repository](https://fangj.github.io/friends/). The aim of this project is to provide a more accessible data set to better serve analysis to be completed in another blog post. 
 
