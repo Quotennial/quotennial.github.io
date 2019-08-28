@@ -95,12 +95,12 @@ Then move onto network analysis ![centrality](../assets/images/friends/centralit
 
 Really interesting use of eigenvalues, speak about how it doesn't mention the most popular character but who the most populate character speaks to.
 
-| Scores   |          |
-| -------- | -------- |
-| Joey     | 0.549413 |
-| Chandler | 0.443715 |
-| Monica   | 0.427912 |
-| Rachel   | 0.420983 |
-| Ross     | 0.326894 |
-| Phoebe   | 0.184572 |
+|  Scores  | Centrality Score |
+| :------: | :--------------: |
+|   Joey   |     0.549413     |
+| Chandler |     0.443715     |
+|  Monica  |     0.427912     |
+|  Rachel  |     0.420983     |
+|   Ross   |     0.326894     |
+|  Phoebe  |     0.184572     |
 

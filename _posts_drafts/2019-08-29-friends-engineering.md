@@ -117,7 +117,7 @@ df.to_sql('lines', conn, if_exists='replace', index=False) # save into the 'line
 | ----------- | ------------ | -------------------- | ----------- | ----------------------- |
 | season(int) | episode(int) | Character Name (str) | speech(str) | sentiment score (float) |
 
-Finally our scripts are formatted and placed in a SQL database. Data wrangling in this way can transform raw data into a more useful data set. Even though we are not adding too much to the data set, the different organisational structure can enable a wider breadth of analysis. Now we have the scripts formatted in this way, we can utilise SQL to gain further insights into the show.
+Finally our scripts are formatted and placed in a SQL database. Data wrangling in this way can transform raw data into a more useful data set. Even though we are not adding too much to the data set, the different organisational structure can enable a wider breadth of analysis. Now we have the scripts formatted in this way, we can utilise SQL to gain further insights into the show as carried out in [this article](https://quotennial.github.io/friends-analysis/).
 
 
 
