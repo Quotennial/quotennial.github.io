@@ -41,7 +41,7 @@ Now we know how to move through our FRIENDS files, we need to see how to isolate
 
 ![scriptsample](../assets/images/friends/scriptsample_regex.png){: .align-center}
 
-The regular expression used is shown below. First we mathc the string before a colon `\w+(?=:)`, so now we have "found" the names of each character. However if we want to match the space before we must use `\s`. You can [test it out for yourself](https://regex101.com/r/GFOGbq/2), as you can see in the example, the regular expression also  matches the space before the writers and transcribers, this will need to be removed after. Now we implement the regular expression in python. In the below code we are also able to split the character name and the speech. This is combined with our loop in the 
+The regular expression used is shown below. First we mathc the string before a colon `\w+(?=:)`, so now we have "found" the names of each character. However if we want to match the space before we must use `\s`. You can [test it out for yourself](https://regex101.com/r/GFOGbq/2), as you can see in the example, the regular expression also  matches the space before the writers and transcribers, this will need to be removed after. Now we implement the regular expression in python. In the below code we are also able to split the character name and the speech.
 
 ```python
 script =f.read() #read the script file
