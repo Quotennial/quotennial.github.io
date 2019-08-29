@@ -24,7 +24,7 @@ ORDER  BY spoken_lines DESC
 
 ![most_lines](../assets/images/friends/most_lines.png){: .align-center}
 
-Rachel just scrapes the top spot with 9294 lines over the entire series Ross coming in a very close second (9070), both averaging around 39-ish lines per episode. This isn't entirely a shock, as they were both the main plot throughout 10 seasons. Almost inseparable are Monica and Chandler, 8403 and 8398 respectively. 
+Rachel just edges the top spot with 9294 lines over the entire series Ross coming in a very close second (9070), both averaging around 39-ish lines per episode. This isn't entirely a shock, as they were both the main plot throughout 10 seasons. Almost inseparable are Monica and Chandler, 8403 and 8398 respectively. 
 
 ```sql
 /*number of lines per season*/ 
@@ -42,7 +42,9 @@ A look at the number of lines breakdown throughout the series confirms this patt
 
 ## Most Spoken About
 
-Was tough because of nicknames 
+![script_mentions](../assets/images/friends/stoptalking.gif)
+
+Being the one doing the most talking does not necessarily mean you're the most popular, so now we will take a look at who's talked about the most. This is a pretty difficult task to accurately capture all mentions of each character. A possible solution is a list of nicknames for each character (let me know if I have missed any out!). It's pertinent to note, this is the method we will use to find any reference to each character throughout this post, using the nicknames detailed below.
 
 ```python
 nicknames = [['Rachel', 'Rach'], 
@@ -53,11 +55,32 @@ nicknames = [['Rachel', 'Rach'],
              ['Phoebe', 'Phoebes','Phoebs']]
 ```
 
-![script_mentions](../assets/images/friends/script_mentions.png)
+In order to get the count, we first iterate through the characters, keeping a count of the mentions. Using a nested for-loop to get each characters nickname, we use the pandas `count()` method to keep a tally of the number of mentions. 
+
+```python
+# SQL query to get all lines
+all_lines = pd.read_sql("""
+SELECT line
+FROM lines""", conn)
+
+char_mention = [] # list to hold the character mention totals
+
+
+for name_list in nicknames:    # loop for each character
+    mention_counter = 0        # keep track of the mentions
+    for name in name_list:     # loop for each nickname
+        mentions = all_lines['line'].str.count(name).sum()
+        mention_counter += mentions
+    char_mention.append([name_list[0], mention_counter]) #append the name and mention count
+```
 
 
 
-may need to put faces to these ones fro consistency 
+INSERT BAR CHART WITH FACES
+
+
+
+When using only full names, Ross is the most  mentioned.  "Chan", "Joe", "Mon" and "Rach" are all mentioned more than their full names. This supports the decision to include the nicknames but does also highlight how sensitive the results are to picking the right names.
 
 # Catchphrases
 
@@ -68,8 +91,6 @@ how you doin - 37
 on a break - 17 times with variants 
 
 smelly cat - 32
-
-
 
 find most popular words, removing stop words 
 
@@ -120,19 +141,19 @@ So far we have mostly looked at out FRIENDS isolation, here we will see how they
 | **Joey**     | 398    | 353  | 306    | 502      | 282  | 119    |
 | **Phoebe**   | 366    | 207  | 426    | 318      | 354  | 133    |
 
-The table can throw up some interesting findings, Rachel was mentioned the most by Ross (622, and one [cost him his marrige](https://youtu.be/5-1-W-qH6Fc?t=253) ) and Ross was mentioned by Rachel the most: 550. Interestingly, although Monica says chandler the most, Chandler says Joey the most.
+The table throws up some interesting findings, Rachel was mentioned the most by Ross (622, and one [cost him his marrige](https://youtu.be/5-1-W-qH6Fc?t=253) ) and Ross was mentioned by Rachel the most: 550. Interestingly, although Monica says chandler the most, Chandler says Joey the most.
 
 ![excited](../assets/images/friends/excited.gif){: .align-center}
 
 
 
-Although the table can provide some insight, it isn't the most ascetically pleasing way to look at the findings. So we can create a chord diagram using [this fucntion](https://github.com/fengwangPhysics/matplotlib-chord-diagram/blob/master/matplotlib-chord.py) provided on Github. The size of the chords for each characters section represents how many times they said the connecting characters name.  In other words, if you were to read the values from left to right in the table, that is what each characters portion shows. This makes it clearer just how much both Joey and Monica occupy Chandler's mentions by looking at the pink slice.
+The table does provide some insight but it isn't the most ascetically pleasing way to look at the findings. So we can create a chord diagram using [this fucntion](https://github.com/fengwangPhysics/matplotlib-chord-diagram/blob/master/matplotlib-chord.py) provided on Github. The size of the chords for each characters section represents how many times they said the connecting characters name.  In other words, if you were to read the values from left to right in the table, that is what each characters portion shows. This makes it clearer just how much both Joey and Monica occupy Chandler's mentions by looking at the pink slice.
 
 ![centrality](../assets/images/friends/centrality.png)
 
 ## Graph and Centrality
 
-So  we have now built a network of FRIENDS we can calculate a centrality score for each of them. Putting this information into a graph structure using `networkx` allows us to utilise the algorithms in the package. A directed, weighted graph is created using the values in the table above (stored in `network_data`), nodes are the characters and the weights are the number of mentions. We can also check the graph has been created correctly by checking the edge weights between nodes.
+So  we have now built a network of FRIENDS we can calculate a centrality score for each of them. Centrality aims to answer the question: *Who is the most important or central person in this network?*. Obviously this is a subjective question depending on the definition of importance. Before we define our measure of importance, we must first convert our table into a graph. We will use network x to create a directed, weighted graph using the values in the table above (stored in `network_data`). Nodes are the characters and the weights are the number of mentions. We can also check the graph has been created correctly by checking the edge weights between nodes.
 
 ```python
 import networkx as nx
@@ -146,17 +167,17 @@ H['Phoebe']['Monica'] #check the edge weight
 ```
 
 ```python
-out: {'weight': 426}
+out: {'weight': 426} # yay! it matches our table
 ```
 
-Now we have created our graph, we can calculate the [Eigenvector Centrality](https://www.youtube.com/watch?v=9vs1zSqd070) which is a measure of influence. This algorithm aims quantify influence of people in a social network, based on connections with important people. With an emphasis on ties with people, it is easy to see how this may be applied to other larger networks such as Twitter. Using "interactions" as weights, this algorithm would be able to give you the largest influencers in a network, valuable information for anyone looking to gauge or alter public opinion.
+Now we have created our graph, we calculate the [Eigenvector Centrality](https://www.youtube.com/watch?v=9vs1zSqd070) as a measure of importance (used in Google's page rank). This algorithm aims quantify influence of people in a social network, based on connections with important people. In this case we are defining "importance" as connections with important people. With an emphasis on links with other people, it is easy to see how this may be applied to other larger networks such as Twitter. Using "interactions" (retweets and likes) as weights, this algorithm may be able to give you the most connected accounts in a network, potentially gaining more insight than a count of the highest number of followers. Valuable information for anyone looking to gauge (or alter) public opinion.
 
 ```python
 # Compute the degree centrality of the Twitter network
 cent_scores = nx.algorithms.centrality.eigenvector_centrality_numpy(H,weight='weight')
 ```
 
-
+Networkx makes life easy, apply the `eigenvector_centrality_numpy` method and define the weights to calculate the scores for each node. The result in order of importance is shown below. I was surprised upon initially looking at the results, however when I thought about the measure it started to make sense. I think Joey could be seen as the glue of the group, always interacting with the other characters. To see Ross and Rachel at the lower end isn't entirely surprising given that they occupy most of each others time. This post hasn't been great for Phoebe 🙁​ .These results are subjective, as as is the interpretation and I would love to hear what you think about the centrality scores.
 
 |  Scores  | Centrality Score |
 | :------: | :--------------: |
