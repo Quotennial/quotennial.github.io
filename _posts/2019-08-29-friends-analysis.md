@@ -128,6 +128,12 @@ Unsurprisingly Ross tops the list his passion for dinosaurs is a running joke th
 <div class="iactiveImg" data-ii="7508"></div><script src="https://interactive-img.com/js/include.js"></script>
 maybe do a chandler and monica one? or joey and chandler season 3, where they move out and back in do a ross and rachel together vs not together comparisons 
 
+See sentiment with and without being in a relationship
+
+
+
+Need another sentiment scoring metric
+
 # Networks
 
 So far we have mostly looked at out FRIENDS isolation, here we will see how they interact. Looking at how many times a character mentions another characters name the show so we can draw networks relating each character to another. The table below shows the results; read from left to right tells us that Rachel mentioned herself 187 times and mentioned Joey the most: 739 times. Read from top to bottom can be understood as Rachel mentioned Chandler 321 times, Ross mentioned him 332 times and his wife (Monica) mentioned him the most: 622.
