@@ -9,9 +9,9 @@ toc_icon: "mug-hot"  #  Font Awesome icon name (without fa prefix)
 
 
 
-FRIENDS is one of my favourite shows (probably *the* favourite) and I'm sure I'm not alone in having rewatched the entire series more than once. I’ve always wondered if there was anything left to know about this oh-so familiar group. This post dives into the show’s scripts to find out more, including the most popular characters and their journey through the seasons. This produces some interesting findings about the characters we know so well, some expected and some surprising results! We will use the data collected in a [previous post](https://quotennial.github.io/friends-engineering/) to analyse the T.V. show. It has been a really enjoyable hobby project and one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy it!
+FRIENDS is one of my favourite shows (probably *the* favourite) and I'm sure I'm not alone in having rewatched the entire series more than once. I’ve always wondered if there was anything left to know about this oh-so familiar group, this post dives into the show’s scripts to find out more, including the most popular characters and their journey through the seasons. This produces some interesting findings about the characters we know so well, some expected and some surprising results! We will use the data collected in a [previous post](https://quotennial.github.io/friends-engineering/) to analyse the T.V. show. It has been a really enjoyable hobby project and one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy it!
 
-![excited2](../assets/images/friends/excited2.gif)
+![excited2](../assets/images/friends/excited2.gif){: .align-center}}
 
 # The Most Popular Friend
 
@@ -151,7 +151,7 @@ The table does provide some insight but it isn't the most ascetically pleasing w
 
 ## Graph and Centrality
 
-So  we have now built a network of FRIENDS we can calculate a centrality score for each of them. Centrality aims to answer the question: *Who is the most important or central person in this network?*. Obviously this is a subjective question depending on the definition of importance. Before we define our measure of importance, we must first convert our table into a graph. We will use network x to create a directed, weighted graph using the values in the table above (stored in `network_data`). Nodes are the characters and the weights are the number of mentions. We can also check the graph has been created correctly by checking the edge weights between nodes.
+We have visualised this network of FRIENDS connected by mentions, now let's calculate a centrality score for each of them. Centrality aims to answer the question: *Who is the most important or central person in this network?*. Obviously this is a subjective question depending on the definition of importance. Before we define our measure of importance, we must first convert our table into a graph data structure. We will use networkx to create a directed, weighted graph using the values in the table above (stored in `network_data`). Nodes are the characters and the weights are the number of mentions. We can also check the graph has been created correctly by checking the edge weights between nodes.
 
 ```python
 import networkx as nx
@@ -168,7 +168,7 @@ H['Phoebe']['Monica'] #check the edge weight
 out: {'weight': 426} # yay! it matches our table
 ```
 
-Now we have created our graph, we calculate the [Eigenvector Centrality](https://www.youtube.com/watch?v=9vs1zSqd070) as a measure of importance (used in Google's page rank). This algorithm aims quantify influence of people in a social network, based on connections with important people. In this case we are defining "importance" as connections with important people. With an emphasis on links with other people, it is easy to see how this may be applied to other larger networks such as Twitter. Using "interactions" (retweets and likes) as weights, this algorithm may be able to give you the most connected accounts in a network, potentially gaining more insight than a count of the highest number of followers. Valuable information for anyone looking to gauge (or alter) public opinion.
+Our graph is now initialised, we will be using the the [Eigenvector Centrality](https://www.youtube.com/watch?v=9vs1zSqd070) as a measure of importance (also used in Google's page rank). This algorithm aims quantify influence of people in a social network, based on connections with important people. In this case we are defining "importance" as connections with important people. With an emphasis on links with other people, it is easy to see how this may be applied to other larger networks such as Twitter. Using "interactions" (retweets and likes) as weights, this algorithm may be able to give you the most connected accounts in a network, potentially gaining more insight than a count of the highest number of followers. Valuable information for anyone looking to gauge (or alter) public opinion.
 
 ```python
 # Compute the degree centrality of the Twitter network
