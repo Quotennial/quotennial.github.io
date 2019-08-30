@@ -119,11 +119,9 @@ Unsurprisingly Ross tops the list his passion for dinosaurs is a running joke th
 
 ## Ross and Rachel
 
-As we have calculated a sentiment score for each line, we are able to monitor this score throughout the course of a season.
+As we have calculated a sentiment score for each line, we are able to monitor this score throughout the course of a season. The chart below tracks the sentiment score for Rachel and Ross throughout the first 2 seasons, click the clue dots to get a possible explanation of each score. Total  sentiment score per episode is calculated, as the scores range in-between -1 to 1 the total will give an indication of the majority of sentiment throughout a particular episode.
 
 <div class="iactiveImg" data-ii="7508"></div><script src="https://interactive-img.com/js/include.js"></script>
-The chart above shows tracks the sentiment for Rachel and Ross throughout the first 2 seasons. Total  sentiment score per episode is calculated, as the scores range in-between -1 to 1 the total will give an indication of the majority of sentiment throughout a particular episode.
-
 Episode 104 is where Rachel gets her first paycheck, may be the cause of such positive sentiment as is episode 117 with a guest appearance from George Clooney. Ross really experiences the highs and lows throughout the first episodes, finding out he was having a boy in episode 112 before saying bye to marcel in episode 121. Before finally, both characters show a spike on episode 207, The One where Ross Finds Out and a conflicted Ross finds out Rachel has feelings for him. This may be why Ross' overall sentiment for that episode was "muted but positive".
 
 # Networks
