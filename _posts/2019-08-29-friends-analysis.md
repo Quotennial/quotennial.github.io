@@ -11,7 +11,7 @@ toc_icon: "mug-hot"  #  Font Awesome icon name (without fa prefix)
 
 FRIENDS is one of my favourite shows (probably *the* favourite) and I'm sure I'm not alone in having rewatched the entire series more than once. I’ve always wondered if there was anything left to know about this oh-so familiar group, this post dives into the show’s scripts to find out more, including the most popular characters and their journey through the seasons. This produces some interesting findings about the characters we know so well, some expected and some surprising results! We will use the data collected in a [previous post](https://quotennial.github.io/friends-engineering/) to analyse the T.V. show. It has been a really enjoyable hobby project and one I have been wanting to do for a while. Hopefully it provides an alternative look at the most looked-at show. As always, feel free to skip the coding bits and jump to the visualisations, hope you enjoy it!
 
-![excited2](../assets/images/friends/excited2.gif){: .align-center}}
+![excited2](../assets/images/friends/excited2.gif){: .align-center}
 
 # The Most Popular Friend
 
