@@ -122,6 +122,8 @@ As we have calculated a sentiment score for each line, we are able to monitor th
 <div class="iactiveImg" data-ii="7508"></div><script src="https://interactive-img.com/js/include.js"></script>
 The chart above shows tracks the sentiment for Rachel and Ross throughout the first 2 seasons. Total  sentiment score per episode is calculated, as the scores range in-between -1 to 1 the total will give an indication of the majority of sentiment throughout a particular episode.
 
+Episode 104 is where Rachel gets her first paycheck, may be the cause of such positive sentiment as is episode 117 with a guest appearance from George Clooney. Ross really experiences the highs and lows throughout the first episodes, finding out he was having a boy in episode 112 before saying bye to marcel in episode 121. Before finally, both characters show a spike on episode 207, The One where Ross Finds Out and a conflicted Ross finds out Rachel has feelings for him. This may be why Ross' overall sentiment for that episode was "muted but positive".
+
 # Networks
 
 So far we have mostly looked at out FRIENDS isolation, here we will see how they interact. Looking at how many times a character mentions another characters name the show so we can draw networks relating each character to another. The table below shows the results; read from left to right tells us that Rachel mentioned herself 187 times and mentioned Joey the most: 739 times. Read from top to bottom can be understood as Rachel mentioned Chandler 321 times, Ross mentioned him 332 times and his wife (Monica) mentioned him the most: 622.
