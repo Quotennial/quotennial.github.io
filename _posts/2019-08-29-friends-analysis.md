@@ -52,7 +52,7 @@ nicknames = [['Rachel', 'Rach'],
              ['Monica', 'Mon'],
              ['Chandler', 'Chan'],
              ['Joey', 'Joe'], 
-             ['Phoebe', 'Phoebes','Phoebs']]
+             ['Phoebe', 'Phoebes']]
 ```
 
 In order to get the count, we first iterate through the characters, keeping a count of the mentions. Using a nested for-loop to get each characters nickname, we use the pandas `count()` method to keep a tally of the number of mentions. 
@@ -74,25 +74,17 @@ for name_list in nicknames:    # loop for each character
     char_mention.append([name_list[0], mention_counter]) #append the name and mention count
 ```
 
-
-
-INSERT BAR CHART WITH FACES
-
-
+![mentions_agg](../assets/images/friends/mentions_agg.png)
 
 When using only full names, Ross is the most  mentioned.  "Chan", "Joe", "Mon" and "Rach" are all mentioned more than their full names. This supports the decision to include the nicknames but does also highlight how sensitive the results are to picking the right names.
 
-# Catchphrases
+![mentions](../assets/images/friends/mentions.png)
 
-plugin as array
+# Words
 
-how you doin - 37
+## Catchphrases
 
-on a break - 17 times with variants 
-
-smelly cat - 32
-
-find most popular words, removing stop words 
+There are a few running catchphrases, for example "Smelly Cat " was mentioned 37 times throughout the whole show. The infamous "We were on a break" line was referred to 17 times. And Joey's pick up line "How you doin'" was said 37 times. 
 
 ## Largest Vocabulary 
 
@@ -125,14 +117,10 @@ Unsurprisingly Ross tops the list his passion for dinosaurs is a running joke th
 
 ## Ross and Rachel
 
+As we have calculated a sentiment score for each line, we are able to monitor this score throughout the course of a season.
+
 <div class="iactiveImg" data-ii="7508"></div><script src="https://interactive-img.com/js/include.js"></script>
-maybe do a chandler and monica one? or joey and chandler season 3, where they move out and back in do a ross and rachel together vs not together comparisons 
-
-See sentiment with and without being in a relationship
-
-
-
-Need another sentiment scoring metric
+The chart above shows tracks the sentiment for Rachel and Ross throughout the first 2 seasons. Total  sentiment score per episode is calculated, as the scores range in-between -1 to 1 the total will give an indication of the majority of sentiment throughout a particular episode.
 
 # Networks
 
@@ -194,3 +182,8 @@ Networkx makes life easy, apply the `eigenvector_centrality_numpy` method and de
 |   Ross   |     0.326894     |
 |  Phoebe  |     0.184572     |
 
+I hope you enjoyed this alternative view on the popular show. Whilst I understand FRIENDS may not be everyone's cup of tea I do think this kind of analysis  can be applied to almost any long running series. Maybe you could try out something similar for your favourite show and let me know what you find! 
+
+
+
+Thanks for reading 🙂
