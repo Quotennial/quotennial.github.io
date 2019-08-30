@@ -175,14 +175,14 @@ cent_scores = nx.algorithms.centrality.eigenvector_centrality_numpy(H,weight='we
 
 Networkx makes life easy, apply the `eigenvector_centrality_numpy` method and define the weights to calculate the scores for each node. The result in order of importance is shown below. I was surprised upon initially looking at the results, however when I thought about the measure it started to make sense. I think Joey could be seen as the glue of the group, always interacting with the other characters. To see Ross and Rachel at the lower end isn't entirely surprising given that they occupy most of each others time. This post hasn't been great for Phoebe 🙁​ .These results are subjective, as as is the interpretation and I would love to hear what you think about the centrality scores.
 
-|  Scores  | Centrality Score |
-| :------: | :--------------: |
-|   Joey   |     0.549413     |
-| Chandler |     0.443715     |
-|  Monica  |     0.427912     |
-|  Rachel  |     0.420983     |
-|   Ross   |     0.326894     |
-|  Phoebe  |     0.184572     |
+| Character | Centrality Score |
+| :-------: | :--------------: |
+|   Joey    |     0.549413     |
+| Chandler  |     0.443715     |
+|  Monica   |     0.427912     |
+|  Rachel   |     0.420983     |
+|   Ross    |     0.326894     |
+|  Phoebe   |     0.184572     |
 
 I hope you enjoyed this alternative view on the popular show. Whilst I understand FRIENDS may not be everyone's cup of tea I do think this kind of analysis  can be applied to almost any long running series. Maybe you could try out something similar for your favourite show and let me know what you find! 
 
