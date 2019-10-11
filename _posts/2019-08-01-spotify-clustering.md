@@ -25,10 +25,9 @@ In this post we will use the Spotify API ([spotipy]) to access my account and pl
 
 ## Looking into the Cluster
 
-<html>
-<head>  
 <script>
-window.onload = function () {
+  window.onload = function () {
+
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title:{
@@ -85,9 +84,4 @@ chart.render();
 
 }
 </script>
-</head>
-<body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</body>
-</html>
+
