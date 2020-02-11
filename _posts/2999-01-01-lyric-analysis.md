@@ -27,6 +27,6 @@ Lyric genius is a go-to for lyrics and understanding a metaphor that may have go
 insert pie chart
 
 <div>
-  https://plot.ly/~ysohoye1/1.embed
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/1.embed" height="525" width="100%"></iframe>
 </div>
 
