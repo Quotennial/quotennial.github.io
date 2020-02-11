@@ -7,9 +7,9 @@ header:
 ---
 
 
-I am a MSc Computer Science Student with a background in Economic Geography, based in London. Interested in cities, innovation systems, economic growth and everything inbetween. 
+I am a Data Engineer at Connected Places Catapult with a background in Computer Science and Economic Geography, based in London. Interested in cities, innovation, causality and everything in between. 
 
-Currently researching innovation using patent networks, looking at the spatial distribution and local factors affecting innovation. Building a network of patent citations and using flow analyisis to find the most infulential pantents. 
+Researching innovation using patent networks, looking at the spatial distribution and local factors affecting innovation. Building a network of patent citations and using flow analysis to find the most influential patents. 
 
-This personal blog will contain some data-science projects using Machine Learning tools and creating data visualisations alongside some hobby projects.  Hopefully there is something for everyone in these articles, whether it is the results, methods or use of API’s. I hope you enjoy reading and please let me know what you think!
+This personal blog will contain some data-science projects using Machine Learning tools, and creating data visualisations, alongside some hobby projects.  Hopefully there is something for everyone in these articles, whether it is the results, methods or use of API’s. I hope you enjoy reading and please let me know what you think :blush:
 
