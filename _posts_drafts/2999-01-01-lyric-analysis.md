@@ -40,4 +40,15 @@ Lyricism is a major component of UK rap,
   Insert Bubble Chart
 </div>
 
+# Where you at
+
+Geo-encoding the places rapped about
+
+map that could tell you who and what song?
+
+# Most Popular words 
+
+Word cloud
+
+# Topic Modelling 
 
