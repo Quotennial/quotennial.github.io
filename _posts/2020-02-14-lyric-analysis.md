@@ -10,8 +10,6 @@ toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
-# Ps and Qs: Textual Analysis of UK Rap Scene
-
 UK rap music prides itself on lyricism;  wordplay, topic, and multitiered rhyme schemes, and are components of a rap song just as important as the beat. There is much emphasis on **what** is being said; it could be an insult, reference to pop culture or a callback to someone in the rap-scene. This focus on the words is a big part of grime and the best lyrics can earn an artist a wheel-up (or 3).  
 
 As a result, I thought it would be interesting to have a look at the words behind the UK Rap scene. This post won't contain any code snippets (happy to share if anyone is interested). First look at some descriptive statistics relating to the contribution of each artist to the scene, before doing some natural language processing.
@@ -57,7 +55,7 @@ Representing your city or area is an element one rap culture. Especially as it h
 Before embarking on topic modelling, data must be cleaned, removing stop words and making sure all words are lower case. After this we can produce a word cloud, indicating that the rap genre is knowledgable and male dominated. After that we can embark on topic modelling, which seeks to find a group of words (topic) from a series of documents (songs). In this case I use pyLDAvis to perform the topic grouping and create the visualisation. this library employs the Latent Dirichlet Allocation algorithm, which is pretty cool - you can find a good intuitive explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
 
 <div>
-  
+
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
 
 
