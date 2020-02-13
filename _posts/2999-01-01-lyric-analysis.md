@@ -25,8 +25,9 @@ I thought it would be interesting to understand the words behind
 Lyric genius is a go-to for lyrics and understanding a metaphor that may have gone over your head (or a "hot take" that is probably reaching).  And they kindly provide an [API](https://docs.genius.com) through with to access this wealth of information. Using the API I pulled all available lyrics from a selection of artists, I understand there may be some I have missed so please let me know if you'd like to see anyone else in there! The data used in the remainder of this article contains **4403** songs, from **43** artists, **2,055,671** words, and **948,071** unique words. 
 
 <div>
-  Insert pie chart
+  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/8.embed" height="525" width="100%"></iframe>
 </div>
+
 
 The chars shows the contribution of songs by each rapper to this data set. By now means is this the definitive list of UK Rap contributions, there are more artists and more songs. This data set is shaped by by size constraints due to computing power (incomplete aritists) and constraints of what is uploaded to lyric genius (incomplete lyrics). Leading the charge we have the old guard of Wiley, Ghetts Giggs and Kano 
 
@@ -37,8 +38,9 @@ The chars shows the contribution of songs by each rapper to this data set. By no
 Lyricism is a major component of UK rap,  
 
 <div>
-  Insert Bubble Chart
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/11.embed" height="525" width="100%"></iframe>
 </div>
+
 
 # Where you at
 
