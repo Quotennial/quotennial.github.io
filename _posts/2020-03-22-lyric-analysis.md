@@ -71,11 +71,7 @@ Whilst wordclouds provide a nice visual representation of frequency, they are of
 
 Topic modelling is an unsupervised machine learning technique which seeks to find a group of words (topic) from a series of documents (songs). In this case, pyLDAvis is utilised to perform the topic grouping and create the visualisation. This library employs the Latent Dirichlet Allocation  (LDA) algorithm, at a high level the algorithm examines how words (and phrases) **co- occur**. If words that appear often in close proximity are assumed to represent a topic. LDA is a Bayesian approach, and uses Dirichlet priors. It treats documents (songs) as probability distributions over topics and topics as probability distributions over words. I think its a really cool approach to topic modelling and widely used as it generalises well, you can find a more in-depth explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
 
-The visualisation below is the output of the LDA - the circles represent topics, the words on the right are the words in that topic. Now some human intuition is needed to interpret the topic. Topic 10 provides an upbeat subject - shake, sauce, jest, rascal, and jump indicate the dancing side of UK rap, these may be the topics seen in the club tunes.
-
-Not all songs are for the club, Topic 1 is quite a positive one, about life, feeling, love, needs and people. It seems that the UK Rap scene has a sensitive side. As Kano said ["This *ain't for the club*, it's for the mandem on the curb"](https://www.youtube.com/watch?v=LMFh-RVw92I)
-
-The model clusters words together that belong to a topic. 
+The visualisation below is the output of the LDA - the circles represent topics, the words on the right are the words in that topic. Now some human intuition is needed to interpret the topic. Topic 10 provides an upbeat subject - shake, sauce, jest, rascal, and jump indicate the dancing side of UK rap, these may be the topics seen in the club tunes. Not all songs are for the club, Topic 1 is quite a positive one, about life, feeling, love, needs and people. It seems that the UK Rap scene has a sensitive side. As Kano said ["This *ain't for the club*, it's for the mandem on the curb"](https://www.youtube.com/watch?v=LMFh-RVw92I). Have a click around the model and see what topics you can find!
 
 <div>
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
