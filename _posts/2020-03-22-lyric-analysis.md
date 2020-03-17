@@ -36,7 +36,7 @@ Since song contributions looks more like a timeline of the rap scene, maybe a lo
 <div>
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/11.embed" height="525" width="100%"></iframe>
 </div>
-The trend is expected: as you say more words in a song you are bound to use more different words, therefore move to the top right of the graph. Two artists on the top right (Mic Righteous and Dave ) are packing a lot of different words into their songs. This could be used as a measure of lyricism, they are 2 artists certainly knows for their lyrics. Not too far behind them are a selection of known wordsmiths: Cadet, Bugzy Malone, P Money, Lowkey, and Akala. Towards the bottom left of the chart we have the less wordy rappers, MIA and MIST have 126 and 142 unique words per song on average.
+The trend is expected: as you say more words in a song you are bound to use more different words, therefore move to the top right of the graph. Two artists on the top right (Mic Righteous and [Dave](https://www.youtube.com/watch?v=XFko_Xf-H30) ) are packing a lot of different words into their songs. This could be used as a measure of lyricism, they are 2 artists certainly knows for their lyrics. Not too far behind them are a selection of known wordsmiths: Cadet, Bugzy Malone, P Money, Lowkey, and Akala. Towards the bottom left of the chart we have the less wordy rappers, MIA and MIST have 126 and 142 unique words per song on average.
 
 #  Where do you know me from?
 
@@ -51,16 +51,33 @@ A large part of working with language dat is the cleaning of it; data must be cl
 
 ![wordcloud](../assets/images/lyric_proj/wordcloud.png)
 
-indicating that the rap genre is knowledgable and male dominated. After that we can embark on topic modelling, which seeks to find a group of words (topic) from a series of documents (songs). In this case I use pyLDAvis to perform the topic grouping and create the visualisation. this library employs the Latent Dirichlet Allocation algorithm, which is pretty cool - you can find a good intuitive explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
+Initial reaction to the output is that the UK rap scene is very knowledgeable and male dominated. Stormzy does have a song titled ["Know Me From"](https://www.youtube.com/watch?v=PxbzujA69DA) which uses *Know* multiple times. The word cloud is mostly comprised of rap slang, these words are pretty good for keeping the *flow* going as well, so no surprised they are commonly used by all rappers.
+
+
+
+I hope you enjoyed a different view of the UK Rap scene. Using the Genius API to create aggregate statistics of the scene showed some the dominance old rappers have in terms of output. A look into the uniqueness of words used by each artist also hints at the lyrics heavy weights. This type of analysis can be applied to other music genres and locations such as hip-hop...
+
+ Thanks for reading!
 
 ![sayit](../assets/images/lyric_proj/sayit.gif)
 
+
+
+
+
 # Bonus: Topic Modelling
 
-![dance](../assets/images/lyric_proj/dance.gif)
+Whilst wordclouds provide a nice visual representation of frequency, they are often plagued with stop words and it is difficult to ascertain meaning forth result. Throughout the article we have been cleaning the textual data, to such an extent we can now embark on topic modelling. 
+
+Topic modelling is an unsupervised machine learning technique which seeks to find a group of words (topic) from a series of documents (songs). In this case, pyLDAvis is utilised to perform the topic grouping and create the visualisation. This library employs the Latent Dirichlet Allocation  (LDA) algorithm, at a high level the algorithm examines how words (and phrases) **co- occur**. If words that appear often in close proximity are assumed to represent a topic. LDA is a Bayesian approach, and uses Dirichlet priors. It treats documents (songs) as probability distributions over topics and topics as probability distributions over words. I think its a really cool approach to topic modelling and widely used as it generalises well, you can find a more in-depth explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
+
+The visualisation below is the output of the LDA - the circles represent topics, the words on the right are the words in that topic. Now some human intuition is needed to interpret the topic. Topic 10 provides an upbeat subject - shake, sauce, jest, rascal, and jump indicate the dancing side of UK rap, these may be the topics seen in the club tunes.
+
+Not all songs are for the club, Topic 1 is quite a positive one, about life, feeling, love, needs and people. It seems that the UK Rap scene has a sensitive side. As Kano said ["This *ain't for the club*, it's for the mandem on the curb"](https://www.youtube.com/watch?v=LMFh-RVw92I)
+
+The model clusters words together that belong to a topic. 
 
 <div>
-
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/bmabey/pyLDAvis/files/ldavis.v1.0.0.css">
 
 
@@ -105,9 +122,9 @@ if(typeof(LDAvis) !== "undefined"){
 
 
 
-The model clusters words together that belong to a topic. Topic
 
 
+![dance](../assets/images/lyric_proj/dance.gif)
 
 
 
