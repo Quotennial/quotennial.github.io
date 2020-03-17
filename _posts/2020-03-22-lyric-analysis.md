@@ -10,39 +10,42 @@ toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
-UK rap music prides itself on lyricism;  wordplay, topic, and multitiered rhyme schemes, and are components of a rap song just as important as the beat. There is much emphasis on **what** is being said; it could be an insult, reference to pop culture or a callback to someone in the rap-scene. This focus on the words is a big part of grime and the best lyrics can earn an artist a wheel-up (or 3).  
+UK rap music prides itself on lyricism;  wordplay, themes, and multitiered rhyme schemes. These components of a rap song are just as important as the beat. There is much emphasis on **what** is being said; it could be an insult, reference to pop culture or a callback to someone in the rap-scene. This focus on words is a big part of grime and the best lyrics can earn an artist a wheel-up (or 3).
 
-As a result, I thought it would be interesting to have a look at the words behind the UK Rap scene. This post won't contain any code snippets (happy to share if anyone is interested). First look at some descriptive statistics relating to the contribution of each artist to the scene, before doing some natural language processing.
+As a result, I thought it would be interesting to have a look at the words behind the UK Rap scene. This post won't contain any code snippets (happy to share if anyone is interested). First we will look at some descriptive statistics relating to the contribution of each artist to the scene, before doing some natural language processing activities.
 
 ![whatusayin](../assets/images/lyric_proj/whatusayin.gif)
 
 ## The Data Set
 
-[Genius](https://genius.com) is a go-to for lyrics and understanding meanings of some lines. They kindly provide an [API](https://docs.genius.com) through which to access this wealth of information. Using the API we can pull lyrics from any given artist. I created a list of UK rappers and queried the API, this process took a long time as not to overload the server with requests.  I understand there may be some artists missing, so please let me know if you'd like to see anyone else in there! The data used contains all lyrics on LyricGenius related to the selected artists shown in the pie chart below. Contains **4403** songs from **44** artists containing **2,055,671** words, and **948,071** unique words. 
+[Genius](https://genius.com) is a go-to for lyrics and understanding the multiple meanings of some lines. They kindly provide an [API](https://docs.genius.com) through which to access this wealth of information. Using the API we can pull lyrics from any given artist. I created a list of UK rappers and queried the API, this process took a long time as not to overload the server with requests. I understand there may be some artists missing, so please let me know if you'd like to see anyone else in there! The data used contains all lyrics on LyricGenius related to the selected artists shown in the pie chart below. Contains **4742** songs from **45** artists containing **2,220,363** words.
 
 <div>
   <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/8.embed" height="525" width="100%"></iframe>
 </div>
 
 
-The interactive chart shows contribution of songs by each rapper to this data set. Immediately we can see how productive Wiley has been, over 100 more songs than Ghetts. Following  leading contributors include the old guard of Ghetts Giggs and Kano and the once new kid on the block: Chip. M.I.A. is another ventral of the scene. Bugzy Malone and Little Simz  have the biggest contribution of the newer rap artists. By no means is this the definitive list of UK Rap contributions, there are more artists and more songs. 
+The interactive chart shows contribution of songs by each rapper to this data set. Immediately we can see how productive Wiley has been, over 100 more songs than Ghetts. Other leading contributors include the old guard of Giggs, Kano and the once new kid on the block: Chip. M.I.A. is another veteran of the scene and contributes a similar amount to Skepta, Dizzee Rascal and JME.  Bugzy Malone and Little Simz  have the biggest contribution of the newer rap artists. By no means is this the definitive list of UK Rap contributions, this list is obtained from lyric genius and although it does a good job of posting freestyles and mixtapes - there will be some lyrics not posted.
+
+![headiewalk](../assets/images/lyric_proj/headiewalk.gif)
+
+
 
 # Lyrics for Lyrics
 
-Since song contribution looks more like a timeline of the rap scene, maybe a look at the words within the songs may help. The chart below looks at **unique** words, showing the average number of **unique** words per song on the y axis and the average number of words per song on the x. Moving up the chart shows more unique words used in a song. 
+Since song contributions looks more like a timeline of the rap scene, maybe a look at the words within the songs may help. The chart below looks at **unique** words; showing the average number of **unique** words per song on the y axis and the average number of words per song on the x. Moving up towards the top of the chart shows more unique words used in a song. Whereas moving rightward shows there are more words in a song. Size of the bubbles indicates the number of songs, this provides a good indication of sample size e.g. Mike Skinners solo effort only contains 1 song whereas The Streets have 119.
 
 <div>
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/11.embed" height="525" width="100%"></iframe>
 </div>
-
-The two artists on the top right (Lowkey and Dave ) are packing a lot of different words into their songs. Could be used as a measure of lyricism, they are 2 artists certainly knows for their lyrics. Towards the bottom of left of the chart we have the less wordy rappers, MIA and MIST have 126 and 142 unique words per song on average
+The trend is expected: as you say more words in a song you are bound to use more different words, therefore move to the top right of the graph. Two artists on the top right (Mic Righteous and Dave ) are packing a lot of different words into their songs. This could be used as a measure of lyricism, they are 2 artists certainly knows for their lyrics. Not too far behind them are a selection of known wordsmiths: Cadet, Bugzy Malone, P Money, Lowkey, and Akala. Towards the bottom left of the chart we have the less wordy rappers, MIA and MIST have 126 and 142 unique words per song on average.
 
 
 
 
 # Where do you know me from?
 
-Representing your city or area is an element one rap culture. Especially as it has move ousted of London, area codes make good ad-libs. Geo-encoding is the method of extracting place names out of text. Using all lyrics in the data set, place names have been extracted. London had a head start advantage, lot's of rappers talking about London, so much so that even East London makes the top 5. There is also references to Meridian Estate in Tottenham. *Nice* is referenced in the text, but I don't think artists were refering to the area in France. A good example of the shortfall of NLP, context is important. 
+Representing your city or area is an element of rap culture. Especially as the scene expands further out of London; area codes make good ad-libs. Geo-encoding is the method of extracting place names out of text. Using all lyrics in the data set, place names have been extracted. London is by far the most talked about place in the grime scene. In fairness, it has had a head start advantage as in the early days a lot of the scene was based in London therefore lot's of rappers were talking about London, so much so that even East London makes the top 5. There is also references to Meridian Estate in Tottenham. *Nice* is referenced in the text, but I don't think artists were refering to the area in France. A good example of the shortfall of NLP, context is important. 
 
 <div>
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/32.embed" height="525" width="100%"></iframe>
@@ -53,6 +56,10 @@ Representing your city or area is an element one rap culture. Especially as it h
 ![wordcloud](../assets/images/lyric_proj/wordcloud.png)
 
 Before embarking on topic modelling, data must be cleaned, removing stop words and making sure all words are lower case. After this we can produce a word cloud, indicating that the rap genre is knowledgable and male dominated. After that we can embark on topic modelling, which seeks to find a group of words (topic) from a series of documents (songs). In this case I use pyLDAvis to perform the topic grouping and create the visualisation. this library employs the Latent Dirichlet Allocation algorithm, which is pretty cool - you can find a good intuitive explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
+
+# Bonus: Topic Modelling
+
+![dance](../assets/images/lyric_proj/dance.gif)
 
 <div>
 
