@@ -40,16 +40,20 @@ The trend is expected: as you say more words in a song you are bound to use more
 
 #  Where do you know me from?
 
-Representing your city or area is an element of rap culture. Especially as the scene expands further out of London; area codes make good ad-libs. Geo-encoding is the method of extracting place names out of text. Using all lyrics in the data set, place names have been extracted. London is by far the most talked about place in the grime scene. In fairness, it has had a head start advantage as in the early days a lot of the scene was based in London therefore lot's of rappers were talking about London, so much so that even East London makes the top 5. There is also references to Meridian Estate in Tottenham. *Nice* is referenced in the text, but I don't think artists were refering to the area in France. A good example of the shortfall of NLP, context is important. 
+Representing your city or area is an element of rap culture. Especially as the scene expands further out of London; area codes make good ad-libs. Geo-encoding is the method of extracting place names out of text. Using all lyrics in the data set, place names have been extracted. London is by far the most talked about place in the grime scene. In fairness, it has had a head start advantage as in the early days a lot of the scene was based in London therefore lot's of rappers were talking about London, so much so that even East London makes the top 5. There is also references to Meridian Estate in Tottenham, where a lot of the original grime MCs were from. *Nice* is picked up a lot in the lyrics, but I don't think artists were referring to the area in France. A good example of the shortfalls of working with language and textual data, and why context is important. 
 
 <div>
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/32.embed" height="525" width="100%"></iframe>
 </div>
-# Topic Modelling
+# What you saying?
+
+A large part of working with language dat is the cleaning of it; data must be cleaned, removing stop words and making sure all words are lower case. In this particular instance, it also meant censoring expletives, of which there were many different kinds.After this we can produce a word cloud, this is an image showing the most popular words in UK Rap lyrics, the size indicates the frequency of that word.
 
 ![wordcloud](../assets/images/lyric_proj/wordcloud.png)
 
-Before embarking on topic modelling, data must be cleaned, removing stop words and making sure all words are lower case. After this we can produce a word cloud, indicating that the rap genre is knowledgable and male dominated. After that we can embark on topic modelling, which seeks to find a group of words (topic) from a series of documents (songs). In this case I use pyLDAvis to perform the topic grouping and create the visualisation. this library employs the Latent Dirichlet Allocation algorithm, which is pretty cool - you can find a good intuitive explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
+indicating that the rap genre is knowledgable and male dominated. After that we can embark on topic modelling, which seeks to find a group of words (topic) from a series of documents (songs). In this case I use pyLDAvis to perform the topic grouping and create the visualisation. this library employs the Latent Dirichlet Allocation algorithm, which is pretty cool - you can find a good intuitive explanation [here](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158).
+
+![sayit](../assets/images/lyric_proj/sayit.gif)
 
 # Bonus: Topic Modelling
 
@@ -107,5 +111,5 @@ The model clusters words together that belong to a topic. Topic
 
 
 
-![sayit](../assets/images/lyric_proj/sayit.gif)
+
 
