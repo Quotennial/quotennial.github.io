@@ -16,7 +16,7 @@ As a result, I thought it would be interesting to have a look at the words behin
 
 ![whatusayin](../assets/images/lyric_proj/whatusayin.gif)
 
-## The Data Set
+# The Data Set
 
 [Genius](https://genius.com) is a go-to for lyrics and understanding the multiple meanings of some lines. They kindly provide an [API](https://docs.genius.com) through which to access this wealth of information. Using the API we can pull lyrics from any given artist. I created a list of UK rappers and queried the API, this process took a long time as not to overload the server with requests. I understand there may be some artists missing, so please let me know if you'd like to see anyone else in there! The data used contains all lyrics on LyricGenius related to the selected artists shown in the pie chart below. Contains **4742** songs from **45** artists containing **2,220,363** words.
 
@@ -29,8 +29,6 @@ The interactive chart shows contribution of songs by each rapper to this data se
 
 ![headiewalk](../assets/images/lyric_proj/headiewalk.gif)
 
-
-
 # Lyrics for Lyrics
 
 Since song contributions looks more like a timeline of the rap scene, maybe a look at the words within the songs may help. The chart below looks at **unique** words; showing the average number of **unique** words per song on the y axis and the average number of words per song on the x. Moving up towards the top of the chart shows more unique words used in a song. Whereas moving rightward shows there are more words in a song. Size of the bubbles indicates the number of songs, this provides a good indication of sample size e.g. Mike Skinners solo effort only contains 1 song whereas The Streets have 119.
@@ -40,17 +38,13 @@ Since song contributions looks more like a timeline of the rap scene, maybe a lo
 </div>
 The trend is expected: as you say more words in a song you are bound to use more different words, therefore move to the top right of the graph. Two artists on the top right (Mic Righteous and Dave ) are packing a lot of different words into their songs. This could be used as a measure of lyricism, they are 2 artists certainly knows for their lyrics. Not too far behind them are a selection of known wordsmiths: Cadet, Bugzy Malone, P Money, Lowkey, and Akala. Towards the bottom left of the chart we have the less wordy rappers, MIA and MIST have 126 and 142 unique words per song on average.
 
-
-
-
-# Where do you know me from?
+#  Where do you know me from?
 
 Representing your city or area is an element of rap culture. Especially as the scene expands further out of London; area codes make good ad-libs. Geo-encoding is the method of extracting place names out of text. Using all lyrics in the data set, place names have been extracted. London is by far the most talked about place in the grime scene. In fairness, it has had a head start advantage as in the early days a lot of the scene was based in London therefore lot's of rappers were talking about London, so much so that even East London makes the top 5. There is also references to Meridian Estate in Tottenham. *Nice* is referenced in the text, but I don't think artists were refering to the area in France. A good example of the shortfall of NLP, context is important. 
 
 <div>
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ysohoye1/32.embed" height="525" width="100%"></iframe>
 </div>
-
 # Topic Modelling
 
 ![wordcloud](../assets/images/lyric_proj/wordcloud.png)
