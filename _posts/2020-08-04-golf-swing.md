@@ -1,11 +1,11 @@
 ---
-title: "Ps and Qs: Textual Analysis of UK Rap Scene "
+title: "Machine Learning to Help My Golf Game"
 date: 2020-02-14
-tags: [topic-model, lyrics, rap]
+tags: [api, video]
 header:
   image:"../assets/images/halong_bay.jpg"
-excerpt: "Understanding the words behind the UK Rap scene"
-toc_label: " UK Rap Analysis"
+excerpt: "Using the Google Video Intelligence API as my Swing Coach"
+toc_label: " Swing Analysis"
 toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
 
 ---
