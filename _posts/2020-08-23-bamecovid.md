@@ -5,8 +5,8 @@ tags: [open-data]
 header:
   overlay_image:"../assets/images/chatbot/friday.png"
 excerpt: "Using open data to provide a descriptive view of the socio-economic factors affecting the UK BAME population during COVID-19"
-toc_label: "Building a chatbot"
-toc_icon: "head-side-mask"  #  Font Awesome icon name (without fa prefix)
+toc_label: "COVID 19 BAME"
+
 ---
 
 *This article was originally posted on [TDS](https://towardsdatascience.com/impact-of-covid-19-on-the-uk-bame-population-cc09244c5d63?source=friends_link&sk=3320d2532b918603631ea8c2a15be039)*
