@@ -10,12 +10,6 @@ toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
-
-
-# Machine Learning to Help My Golf Game
-
-Using the Google Video Intelligence API as my Swing Coach
-
 Inspired by an article using the Google Video Intelligence API to [analyse a tennis serve](https://daleonai.com/machine-learning-for-sports), i wanted to see if i could use the Google Video Intelligence API to give me some insight into my golf swing. 
 
 ## The API
