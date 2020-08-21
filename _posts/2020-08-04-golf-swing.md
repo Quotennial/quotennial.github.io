@@ -6,7 +6,7 @@ header:
   image:"../assets/images/halong_bay.jpg"
 excerpt: "Using the Google Video Intelligence API as my Swing Coach"
 toc_label: " Swing Analysis"
-toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
+toc_icon: "golf-ball"  #  Font Awesome icon name (without fa prefix)
 
 ---
 
