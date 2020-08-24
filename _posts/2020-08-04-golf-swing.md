@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning to Help My Golf Game"
 date: 2020-02-14
-tags: [api, video]
+tags: [api, image]
 header:
   image:"../assets/images/halong_bay.jpg"
 excerpt: "Using the Google Video Intelligence API as my Swing Coach"

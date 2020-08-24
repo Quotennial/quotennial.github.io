@@ -1,7 +1,7 @@
 ---
 title: "Ps and Qs: Textual Analysis of UK Rap Scene "
 date: 2020-02-14
-tags: [topic-model, lyrics, rap]
+tags: [topic-model, sentiment-analysis]
 header:
   image:"../assets/images/halong_bay.jpg"
 excerpt: "Understanding the words behind the UK Rap scene"

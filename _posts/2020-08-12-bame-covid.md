@@ -1,6 +1,6 @@
 ---
 title: "Impact of COVID-19 on the UK BAME population"
-date: 2019-01-01
+date: 2020-08-12
 tags: [open-data]
 header:
   overlay_image:"../assets/images/chatbot/friday.png"
