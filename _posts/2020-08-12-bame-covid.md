@@ -6,6 +6,7 @@ header:
   overlay_image:"../assets/images/chatbot/friday.png"
 excerpt: "Using open data to provide a descriptive view of the socio-economic factors affecting the UK BAME population during COVID-19"
 toc_label: "COVID 19 BAME"
+classes: wide
 
 ---
 

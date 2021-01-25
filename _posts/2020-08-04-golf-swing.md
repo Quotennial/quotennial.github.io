@@ -48,7 +48,7 @@ So I used the object detection API first, came back with some great detected obj
    'confidence': 0.5179229974746704}]}
 ```
 
-A great confidence boost for a bogey golfer such as myself. To delve deeper into the movement we need to use the PersonDetection feature of the API which is in Beta at time of writing, the code snippets are on [google](https://cloud.google.com/video-intelligence/docs/people-detection) and Dale Markowitz provides a [superb helper function](https://github.com/google/making_with_ml/blob/master/sports_ai/Sports_AI_Analysis.ipynb) that just... works! So now we have a timeline fo where each body part is. 
+A great confidence boost for a bogey golfer such as myself. To delve deeper into the movement we need to use the PersonDetection feature of the API which is in Beta at time of writing, the code snippets are on [google](https://cloud.google.com/video-intelligence/docs/people-detection) and Dale Markowitz provides a [superb helper function](https://github.com/google/making_with_ml/blob/master/sports_ai/Sports_AI_Analysis.ipynb) that just... works! So now we have a timeline for where each body part is. 
 
 In practice i used a video of my own swing, but for the purposes of the world wide web I thought [Collin Morikawa's swing](https://www.youtube.com/watch?v=-lOywb34_3U) would be more appropriate and from now on we will be looking at his swing. We can start by plotting the path of the left wrist, that shows us the swing path.
 
