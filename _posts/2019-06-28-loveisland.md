@@ -7,6 +7,7 @@ header:
 excerpt: "Using the Twitter API to see how we feel about Love Island"
 toc_label: "Love Island Sentiment Analysis"
 toc_icon: "umbrella-beach"  #  Font Awesome icon name (without fa prefix)
+classes: wide
 
 ---
 

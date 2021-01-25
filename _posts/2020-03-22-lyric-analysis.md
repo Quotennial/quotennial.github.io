@@ -7,6 +7,7 @@ header:
 excerpt: "Understanding the words behind the UK Rap scene"
 toc_label: " UK Rap Analysis"
 toc_icon: "microphone"  #  Font Awesome icon name (without fa prefix)
+classes: wide
 
 ---
 
