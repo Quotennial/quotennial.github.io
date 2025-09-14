@@ -10,9 +10,6 @@ toc_icon: "book-reader"  # Font Awesome icon name (without fa prefix)
 
 ---
 
-
-# In Praise of the Leave: Test cricket and the Age of the Loudest Shouts
-
 Consumer internet rewards the spectacular, we forget how games — and societies — are truly won: through patience, pressure, and the quiet courage to do keep doing the right thing.
 
 
